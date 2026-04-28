@@ -70,21 +70,11 @@ export default function Blog() {
 
       <Navbar />
 
-      <section
-        className="py-5 text-white text-center"
-        style={{
-          background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)",
-          minHeight: "35vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div className="container" style={{ paddingTop: "4rem" }}>
-          <p className="text-warning fw-bold text-uppercase" style={{ letterSpacing: 2, fontSize: "0.85rem" }}>
-            Blog & Tips
-          </p>
-          <h1 className="display-5 fw-bold">Inspirasi Perjalanan Jepang</h1>
-          <p className="mt-3 opacity-75">Panduan, tips, dan cerita dari Jepang untuk traveler Indonesia.</p>
+      <section className="page-hero text-center">
+        <div className="container">
+          <span className="page-hero-label">Blog & Tips</span>
+          <h1 className="display-5 fw-bold mt-2">Inspirasi Perjalanan Jepang</h1>
+          <p className="mt-3" style={{ color: "#6b7280" }}>Panduan, tips, dan cerita dari Jepang untuk traveler Indonesia.</p>
         </div>
       </section>
 

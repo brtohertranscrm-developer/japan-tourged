@@ -22,20 +22,12 @@ export default function PrivateTrip() {
 
       <Navbar />
 
-      <section
-        className="py-5 text-white text-center"
-        style={{
-          background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)",
-          minHeight: "45vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div className="container" style={{ paddingTop: "4rem" }}>
-          <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>🗾</div>
-          <p className="text-warning fw-bold text-uppercase" style={{ letterSpacing: 2, fontSize: "0.85rem" }}>Paket Unggulan</p>
-          <h1 className="display-5 fw-bold">Private Trip Jepang</h1>
-          <p className="mt-3 opacity-80" style={{ maxWidth: 560, margin: "1rem auto 0" }}>
+      <section className="page-hero text-center">
+        <div className="container">
+          <div style={{ fontSize: "3.5rem", marginBottom: "1rem" }}>🗾</div>
+          <span className="page-hero-label">Paket Unggulan</span>
+          <h1 className="display-5 fw-bold mt-2">Private Trip Jepang</h1>
+          <p className="mt-3" style={{ maxWidth: 520, margin: "0 auto", color: "#6b7280" }}>
             Perjalanan eksklusif yang dirancang 100% sesuai keinginan Anda. Jadwal bebas, destinasi pilihan sendiri.
           </p>
           <div className="mt-4 d-flex flex-wrap justify-content-center gap-3">
@@ -43,12 +35,11 @@ export default function PrivateTrip() {
               href="https://wa.me/62XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn fw-semibold px-4 py-3 rounded-pill"
-              style={{ background: "#c0392b", color: "#fff", border: "none" }}
+              className="btn-primary-custom"
             >
               💬 Konsultasi Gratis
             </a>
-            <Link href="/blog" className="btn btn-outline-light fw-semibold px-4 py-3 rounded-pill">
+            <Link href="/blog" className="btn-outline-custom">
               Baca Tips Trip →
             </Link>
           </div>
@@ -89,9 +80,9 @@ export default function PrivateTrip() {
                   { duration: "10 Hari 9 Malam", price: "Mulai Rp 28 juta", note: "per orang (2 pax)" },
                 ].map((p) => (
                   <div key={p.duration} className="col-md-4">
-                    <div className="p-4 rounded-4 bg-white" style={{ border: "2px solid #f0f0f0" }}>
-                      <p className="fw-bold mb-1" style={{ color: "#1a1a2e" }}>{p.duration}</p>
-                      <h5 className="fw-800 mb-1" style={{ color: "#c0392b", fontWeight: 800 }}>{p.price}</h5>
+                    <div className="p-4 rounded-4 bg-white" style={{ border: "1.5px solid #e5e7eb" }}>
+                      <p className="fw-bold mb-1" style={{ color: "#111827" }}>{p.duration}</p>
+                      <h5 className="fw-800 mb-1" style={{ color: "#e8403a", fontWeight: 800 }}>{p.price}</h5>
                       <small className="text-muted">{p.note}</small>
                     </div>
                   </div>

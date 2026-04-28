@@ -12,22 +12,11 @@ export default function About() {
 
       <Navbar />
 
-      <section
-        className="py-5 text-white text-center"
-        style={{
-          background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)",
-          paddingTop: "120px !important",
-          minHeight: "40vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div className="container" style={{ paddingTop: "4rem" }}>
-          <p className="text-warning fw-bold text-uppercase" style={{ letterSpacing: 2, fontSize: "0.85rem" }}>
-            Tentang Kami
-          </p>
-          <h1 className="display-5 fw-bold">Tim di Balik Perjalanan Impian Anda</h1>
-          <p className="mt-3 opacity-75" style={{ maxWidth: 560, margin: "0 auto" }}>
+      <section className="page-hero text-center">
+        <div className="container">
+          <span className="page-hero-label">Tentang Kami</span>
+          <h1 className="display-5 fw-bold mt-2">Tim di Balik Perjalanan Impian Anda</h1>
+          <p className="mt-3" style={{ maxWidth: 520, margin: "0 auto", color: "#6b7280" }}>
             Kami adalah tim pecinta Jepang yang berdedikasi untuk menciptakan pengalaman wisata yang benar-benar personal.
           </p>
         </div>
@@ -64,7 +53,7 @@ export default function About() {
             <div className="col-lg-6">
               <div
                 className="rounded-4 d-flex align-items-center justify-content-center"
-                style={{ background: "linear-gradient(135deg, #1a1a2e, #0f3460)", height: 400, fontSize: "8rem" }}
+                style={{ background: "linear-gradient(135deg, #fff5f5, #fde8e8)", height: 400, fontSize: "8rem" }}
               >
                 🗾
               </div>

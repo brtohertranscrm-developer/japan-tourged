@@ -100,43 +100,55 @@ export default function Home() {
       {/* Hero */}
       <section className="hero-section">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-7">
-              <div className="hero-content">
-                <span className="hero-badge">🇯🇵 Spesialis Wisata Jepang</span>
-                <h1 className="hero-title mb-3">
-                  Jepang, Persis Seperti<br />
-                  <span>Yang Kamu Impikan</span>
-                </h1>
-                <p className="hero-subtitle mb-4">
-                  Kami merancang perjalanan Jepang yang benar-benar personal — dari itinerary hingga pengalaman lokal yang autentik.
-                </p>
-                <div className="d-flex flex-wrap gap-3">
-                  <a
-                    href="https://wa.me/62XXXXXXXXXX"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary-custom"
-                  >
-                    💬 Konsultasi Gratis
-                  </a>
-                  <Link href="/packages/private-trip" className="btn-outline-custom">
-                    Lihat Paket Trip →
-                  </Link>
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6">
+              <span className="hero-badge">✨ Spesialis Wisata Jepang #1</span>
+              <h1 className="hero-title mb-3">
+                Jepang, Persis Seperti<br />
+                <span>Yang Kamu Impikan</span>
+              </h1>
+              <p className="hero-subtitle mb-4">
+                Kami merancang perjalanan Jepang yang benar-benar personal — dari itinerary hingga pengalaman lokal yang autentik.
+              </p>
+              <div className="d-flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/62XXXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary-custom"
+                >
+                  💬 Konsultasi Gratis
+                </a>
+                <Link href="/packages/private-trip" className="btn-outline-custom">
+                  Lihat Paket Trip →
+                </Link>
+              </div>
+              <div className="hero-stats">
+                <div className="stat-item">
+                  <h3>500+</h3>
+                  <p>Traveler Puas</p>
                 </div>
-                <div className="hero-stats">
-                  <div className="stat-item">
-                    <h3>500+</h3>
-                    <p>Traveler Puas</p>
-                  </div>
-                  <div className="stat-item">
-                    <h3>5★</h3>
-                    <p>Rating</p>
-                  </div>
-                  <div className="stat-item">
-                    <h3>3 Thn</h3>
-                    <p>Pengalaman</p>
-                  </div>
+                <div className="stat-item">
+                  <h3>5★</h3>
+                  <p>Rating</p>
+                </div>
+                <div className="stat-item">
+                  <h3>3 Thn</h3>
+                  <p>Pengalaman</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 d-none d-lg-block">
+              <div className="hero-visual">
+                <div className="hero-visual-emoji">🗾</div>
+                <div className="hero-visual-pill" style={{ top: "1.5rem", left: "1.5rem" }}>
+                  🌸 Sakura Season Ready
+                </div>
+                <div className="hero-visual-pill" style={{ bottom: "2rem", right: "1.5rem" }}>
+                  ⭐ 5.0 · 500+ Review
+                </div>
+                <div className="hero-visual-pill" style={{ bottom: "5.5rem", left: "1.5rem" }}>
+                  ✈️ Custom Itinerary
                 </div>
               </div>
             </div>

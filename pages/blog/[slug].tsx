@@ -93,25 +93,12 @@ export default function BlogPost({ slug }: Props) {
 
       <Navbar />
 
-      <section
-        className="py-5 text-white text-center"
-        style={{
-          background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)",
-          minHeight: "35vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div className="container" style={{ paddingTop: "4rem" }}>
-          <div style={{ fontSize: "4rem", marginBottom: "1rem" }}>{post.emoji}</div>
-          <span
-            className="badge mb-3"
-            style={{ background: "rgba(192,57,43,0.3)", color: "#fff", padding: "6px 14px", borderRadius: 20 }}
-          >
-            {post.category}
-          </span>
-          <h1 className="display-6 fw-bold" style={{ maxWidth: 700, margin: "0 auto" }}>{post.title}</h1>
-          <p className="mt-3 opacity-75 small">{post.date} · {post.readTime} baca</p>
+      <section className="page-hero text-center">
+        <div className="container">
+          <div style={{ fontSize: "3.5rem", marginBottom: "1rem" }}>{post.emoji}</div>
+          <span className="blog-category mb-2 d-inline-block">{post.category}</span>
+          <h1 className="display-6 fw-bold" style={{ maxWidth: 700, margin: "0 auto", color: "#111827" }}>{post.title}</h1>
+          <p className="mt-3 small" style={{ color: "#6b7280" }}>{post.date} · {post.readTime} baca</p>
         </div>
       </section>
 
