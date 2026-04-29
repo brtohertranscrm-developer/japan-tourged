@@ -117,11 +117,16 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-primary-custom"
                 >
-                  💬 Konsultasi Gratis
+                  💬 Konsultasikan Gratis
                 </a>
-                <Link href="/packages/private-trip" className="btn-outline-custom">
-                  Lihat Paket Trip →
-                </Link>
+                <a
+                  href="https://wa.me/62XXXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline-custom"
+                >
+                  Hubungi Kami →
+                </a>
               </div>
               <div className="hero-stats">
                 <div className="stat-item">
@@ -139,15 +144,32 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6 d-none d-lg-block">
-              <div className="hero-visual">
-                <div className="hero-visual-emoji">🗾</div>
-                <div className="hero-visual-pill" style={{ top: "1.5rem", left: "1.5rem" }}>
+              <div className="hero-video-card">
+                {/* Japan scenery background */}
+                <div className="hero-video-scene">
+                  <span className="hero-video-sky" />
+                  <span className="hero-video-torii">⛩️</span>
+                  <span className="hero-video-sakura">🌸</span>
+                  <span className="hero-video-mountain">🗻</span>
+                </div>
+                {/* Play button overlay */}
+                <div className="hero-video-overlay">
+                  <button className="hero-play-btn" aria-label="Play video">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+                  <span className="hero-video-label">Lihat Cerita Kami</span>
+                </div>
+                {/* Floating info cards */}
+                <div className="hero-floating-card" style={{ top: "1.5rem", left: "-1.2rem" }}>
+                  <span className="hero-floating-dot" style={{ background: "#22c55e" }} />
                   🌸 Sakura Season Ready
                 </div>
-                <div className="hero-visual-pill" style={{ bottom: "2rem", right: "1.5rem" }}>
+                <div className="hero-floating-card" style={{ bottom: "5.5rem", right: "-1.2rem" }}>
                   ⭐ 5.0 · 500+ Review
                 </div>
-                <div className="hero-visual-pill" style={{ bottom: "5.5rem", left: "1.5rem" }}>
+                <div className="hero-floating-card" style={{ bottom: "2rem", left: "-1.2rem" }}>
                   ✈️ Custom Itinerary
                 </div>
               </div>
