@@ -226,13 +226,15 @@ export default function Home() {
           <div className="row g-4">
             {services.map((s) => (
               <div key={s.title} className="col-sm-6 col-lg-3">
-                <div className="service-card card p-4">
-                  <div className="service-card-icon">{s.icon}</div>
-                  <h5 className="card-title mb-2">{s.title}</h5>
-                  <p className="card-text mb-3">{s.desc}</p>
-                  <Link href={s.href} className="btn-link-custom">
-                    Selengkapnya →
-                  </Link>
+                <div className="service-card card h-100 overflow-hidden border-0 shadow-sm">
+                  <img src={s.image} alt={s.title} className="card-img-top" style={{ objectFit: 'cover', height: '180px' }} />
+                  <div className="card-body p-4">
+                    <h5 className="card-title mb-2">{s.title}</h5>
+                    <p className="card-text mb-3 text-muted">{s.desc}</p>
+                    <Link href={s.href} className="btn-link-custom text-decoration-none fw-semibold">
+                      Selengkapnya →
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
