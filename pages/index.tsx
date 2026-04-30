@@ -1,29 +1,50 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const IMAGEKIT_BASE = "https://ik.imagekit.io/tourged";
+const PROJECT_BASE = `${IMAGEKIT_BASE}/Project%20tourged.id`;
+
+const bannerSlides = [
+  { src: `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Pemandangan Indah" },
+  { src: `${PROJECT_BASE}/38dd9088-3af6-4d03-ba59-3d7799f84925.jpg?updatedAt=1777528837931&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Pengalaman Budaya" },
+  { src: `${PROJECT_BASE}/45e0af3c-8d21-4adb-b140-761b8bcea108.jpg?updatedAt=1777528837365&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Wisata Alam" },
+  { src: `${PROJECT_BASE}/IMG_2332.JPG?updatedAt=1777528836709&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Kuliner Jepang" },
+];
+
+const galleryImages = [
+  `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/38dd9088-3af6-4d03-ba59-3d7799f84925.jpg?updatedAt=1777528837931&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/45e0af3c-8d21-4adb-b140-761b8bcea108.jpg?updatedAt=1777528837365&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/IMG_2332.JPG?updatedAt=1777528836709&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/9675005a-8ddb-4fcf-a725-9751f6c90e62.jpg?updatedAt=1777528836461&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/dd3c4b00-3e29-4730-9d65-290b8a6fcdf8.jpg?updatedAt=1777528836298&tr=w-600,h-600,c-at_max`,
+  `${PROJECT_BASE}/285c6459-b359-40e2-a400-aa1520ad4d3b.jpg?updatedAt=1777528833337&tr=w-600,h-600,c-at_max`
+];
+
 const services = [
   {
-    icon: "🗾",
+    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-private.jpg`,
     title: "Private Trip",
     desc: "Perjalanan eksklusif yang dirancang khusus sesuai keinginan Anda. Bebas atur jadwal, destinasi, dan budget.",
     href: "/packages/private-trip",
   },
   {
-    icon: "🌅",
+    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-oneday.jpg`,
     title: "One Day Tour",
     desc: "Jelajahi highlight terbaik Jepang dalam satu hari penuh bersama guide berpengalaman.",
     href: "/packages/one-day-tour",
   },
   {
-    icon: "🏢",
+    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-company.jpg`,
     title: "Company Trip",
     desc: "Paket wisata tim perusahaan yang profesional dan memorable. Cocok untuk team building.",
     href: "/packages/company-trip",
   },
   {
-    icon: "💑",
+    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-honeymoon.jpg`,
     title: "Honeymoon",
     desc: "Rayakan momen spesial di Jepang dengan sentuhan romantis yang tak terlupakan.",
     href: "/packages/honeymoon",
@@ -83,6 +104,14 @@ const blogPosts = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    import("bootstrap").then((bootstrap) => {
+      const el = document.getElementById("heroBannerCarousel");
+      if (el && !bootstrap.Carousel.getInstance(el)) new bootstrap.Carousel(el);
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -144,22 +173,28 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6 d-none d-lg-block">
-              <div className="hero-video-card">
-                {/* Japan scenery background */}
-                <div className="hero-video-scene">
-                  <span className="hero-video-sky" />
-                  <span className="hero-video-torii">⛩️</span>
-                  <span className="hero-video-sakura">🌸</span>
-                  <span className="hero-video-mountain">🗻</span>
-                </div>
-                {/* Play button overlay */}
-                <div className="hero-video-overlay">
-                  <button className="hero-play-btn" aria-label="Play video">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+              <div className="hero-video-card position-relative overflow-hidden p-0" style={{ borderRadius: '24px', height: '480px' }}>
+                <div id="heroBannerCarousel" className="carousel slide h-100" data-bs-ride="carousel">
+                  <div className="carousel-inner h-100">
+                    {bannerSlides.map((slide, idx) => (
+                      <div key={idx} className={`carousel-item h-100 ${idx === 0 ? "active" : ""}`}>
+                        <img 
+                          src={slide.src} 
+                          alt={slide.alt} 
+                          className="d-block w-100 h-100" 
+                          style={{ objectFit: "cover" }} 
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <button className="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
                   </button>
-                  <span className="hero-video-label">Lihat Cerita Kami</span>
+                  <button className="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
                 </div>
                 {/* Floating info cards */}
                 <div className="hero-floating-card" style={{ top: "1.5rem", left: "-1.2rem" }}>
@@ -247,6 +282,33 @@ export default function Home() {
                       <small>{t.origin}</small>
                     </div>
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-5">
+        <div className="container py-3">
+          <div className="text-center mb-5">
+            <p className="section-label">Galeri Destinasi</p>
+            <h2 className="section-title">Momen Tak Terlupakan</h2>
+            <p className="text-muted mt-2">Intip beberapa momen keindahan destinasi di Jepang bersama kami.</p>
+          </div>
+          <div className="row g-3">
+            {galleryImages.map((src, idx) => (
+              <div key={idx} className="col-6 col-md-4 col-lg-3">
+                <div className="gallery-item overflow-hidden rounded-3" style={{ height: "200px" }}>
+                  <img 
+                    src={src} 
+                    alt={`Japan Travel Gallery ${idx + 1}`} 
+                    className="w-100 h-100" 
+                    style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
+                    onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.1)"}
+                    onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
+                  />
                 </div>
               </div>
             ))}
