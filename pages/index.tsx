@@ -159,16 +159,16 @@ export default function Home() {
               </div>
               <div className="hero-stats">
                 <div className="stat-item">
-                  <h3>500+</h3>
-                  <p>Traveler Puas</p>
+                  <h3>Founding Batch</h3>
+                  <p>Open for Our First Clients</p>
                 </div>
                 <div className="stat-item">
-                  <h3>5★</h3>
-                  <p>Rating</p>
+                  <h3>100%</h3>
+                  <p>Personal Trip Assistance</p>
                 </div>
                 <div className="stat-item">
-                  <h3>3 Thn</h3>
-                  <p>Pengalaman</p>
+                  <h3>Early Bird</h3>
+                  <p>Special Value for First Bookings</p>
                 </div>
               </div>
             </div>
