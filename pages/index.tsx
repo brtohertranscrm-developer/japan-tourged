@@ -114,48 +114,64 @@ const popularSpots = [
     name: "Tokyo",
     area: "Kanto",
     blurb: "City energy, shopping, cafés, neighborhoods, day trips.",
-    x: 64,
-    y: 56,
+    x: 70,
+    y: 57,
   },
   {
     id: "fuji",
     name: "Mt. Fuji / Hakone",
     area: "Kanto",
     blurb: "Iconic views, lakes, ryokan vibes, onsen options.",
-    x: 58,
-    y: 60,
+    x: 66,
+    y: 61,
   },
   {
     id: "kyoto",
     name: "Kyoto",
     area: "Kansai",
     blurb: "Temples, old streets, calm mornings, culture-focused pace.",
-    x: 47,
-    y: 67,
+    x: 55,
+    y: 64,
   },
   {
     id: "osaka",
     name: "Osaka",
     area: "Kansai",
     blurb: "Food streets, fun nightlife, easy base for day trips.",
-    x: 44,
-    y: 70,
+    x: 53,
+    y: 67,
   },
   {
     id: "sapporo",
     name: "Sapporo",
     area: "Hokkaido",
     blurb: "Cooler weather, nature, seafood, relaxed city feel.",
-    x: 74,
-    y: 26,
+    x: 77,
+    y: 19,
   },
   {
     id: "hiroshima",
     name: "Hiroshima",
     area: "Chugoku",
     blurb: "History, food, and an easy visit to Miyajima.",
-    x: 33,
+    x: 43,
+    y: 68,
+  },
+  {
+    id: "fukuoka",
+    name: "Fukuoka",
+    area: "Kyushu",
+    blurb: "Easy city base, street food, warmer weather, Kyushu access.",
+    x: 34,
     y: 76,
+  },
+  {
+    id: "okinawa",
+    name: "Okinawa",
+    area: "Ryukyu Islands",
+    blurb: "Island mood, beaches, slower days, tropical Japan.",
+    x: 23,
+    y: 86,
   },
 ];
 
@@ -257,20 +273,42 @@ export default function Home() {
             <div className="col-lg-7">
               <div className="map-shell">
                 <div className="map-surface">
-                  <svg className="japan-svg" viewBox="0 0 100 100" role="img" aria-label="Japan map">
+                  <svg className="japan-svg" viewBox="0 0 900 560" role="img" aria-label="Japan map">
                     <defs>
                       <linearGradient id="jpGrad" x1="0" y1="0" x2="1" y2="1">
                         <stop offset="0" stopColor="#ffffff" />
                         <stop offset="1" stopColor="#fbfaf6" />
                       </linearGradient>
                     </defs>
-                    {/* Stylized silhouette (not geographic-accurate) */}
                     <path
-                      d="M72 10c6 5 7 12 4 18-2 4-2 7 1 10 5 6 6 12 2 17-3 4-7 6-11 7-2 1-3 2-3 4 0 6-4 10-11 12-7 2-12 4-14 7-2 4-6 6-11 5-5-1-8-5-7-10 1-5 4-8 9-10 4-2 7-5 7-9 0-5-4-9-9-12-6-4-8-9-6-14 2-5 7-8 13-8 2 0 3-1 4-3 2-5 6-8 12-9 6-1 11-2 13-5 2-3 4-5 7-7z"
-                      fill="url(#jpGrad)"
-                      stroke="rgba(62,61,143,0.22)"
-                      strokeWidth="1.1"
+                      className="japan-region"
+                      d="M652 56c35-18 79-10 106 19 27 28 27 63 6 87-19 22-52 24-81 11-29-14-48-40-44-72 2-19 7-34 13-45z"
                     />
+                    <path
+                      className="japan-region"
+                      d="M684 180c31 12 53 36 57 67 4 35-17 55-47 65-31 10-54 20-70 45-20 31-43 50-77 57-41 9-75 3-109 25-34 21-69 35-109 25-32-8-45-31-34-56 10-25 42-31 75-41 39-12 62-31 81-61 18-28 48-44 82-48 37-4 63-20 85-45 19-21 39-39 66-33z"
+                    />
+                    <path
+                      className="japan-region"
+                      d="M464 404c29-8 55-3 76 13 16 12 19 30 4 42-17 13-48 10-74 0-23-10-45-13-67-5-18 7-34-1-36-15-2-14 14-25 40-27 19-1 35-3 57-8z"
+                    />
+                    <path
+                      className="japan-region"
+                      d="M250 391c30-18 67-14 91 8 20 18 17 46-7 62-19 13-34 31-40 53-7 25-35 34-57 19-22-16-18-45-5-69 10-20 8-39 18-73z"
+                    />
+                    <g className="japan-island-chain">
+                      <circle cx="214" cy="470" r="9" />
+                      <circle cx="188" cy="492" r="7" />
+                      <circle cx="159" cy="514" r="8" />
+                      <circle cx="126" cy="528" r="6" />
+                    </g>
+                    <g className="map-region-labels">
+                      <text x="694" y="60">Hokkaido</text>
+                      <text x="590" y="330">Honshu</text>
+                      <text x="454" y="482">Shikoku</text>
+                      <text x="250" y="546">Kyushu</text>
+                      <text x="92" y="510">Okinawa</text>
+                    </g>
                   </svg>
 
                   {popularSpots.map((spot) => (
