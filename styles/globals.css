@@ -149,6 +149,7 @@ body > * {
 }
 
 .hero-carousel {
+  position: relative;
   height: calc(100vh - 74px);
   min-height: 640px;
 }
@@ -164,6 +165,8 @@ body > * {
 }
 
 .hero-slide-img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -173,6 +176,7 @@ body > * {
 .hero-slide-scrim {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     radial-gradient(900px 520px at 20% 35%, rgba(0, 0, 0, 0.64), transparent 62%),
     radial-gradient(980px 560px at 55% 45%, rgba(45, 47, 73, 0.26), transparent 68%),
@@ -182,6 +186,7 @@ body > * {
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   display: flex;
   align-items: flex-start;
   pointer-events: none;
