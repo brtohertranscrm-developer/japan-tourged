@@ -111,12 +111,12 @@ export default function FAQ() {
                   Chat us on WhatsApp and tell us your travel dates, city preferences, and budget range. We’ll reply with a clear direction and options.
                 </p>
                 <a
-                  href="https://wa.me/62XXXXXXXXXX"
+                  href="https://wa.me/6281280904772"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary-custom"
                 >
-                  💬 Start Free Consultation
+                  Start Free Consultation
                 </a>
               </div>
             </div>

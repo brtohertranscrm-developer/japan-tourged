@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 
 const posts = [
   {
-    emoji: "🌸",
+    image: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=800&q=80",
     category: "Spring",
     title: "Sakura in Japan 2025: A Practical Guide",
     excerpt: "Find the best locations and the right timing to enjoy cherry blossoms across Japan.",
@@ -14,7 +14,7 @@ const posts = [
     slug: "panduan-sakura-jepang-2025",
   },
   {
-    emoji: "🍜",
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
     category: "Food",
     title: "10 Must-Try Foods for Your First Japan Trip",
     excerpt: "From authentic ramen to street takoyaki, here are the classics you should not miss.",
@@ -23,7 +23,7 @@ const posts = [
     slug: "makanan-wajib-jepang",
   },
   {
-    emoji: "🏯",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
     category: "Culture",
     title: "Kyoto Temples: A First-Timer Friendly Route",
     excerpt: "A simple guide to Fushimi Inari, Kinkaku-ji, and Kyoto’s best cultural spots.",
@@ -32,7 +32,7 @@ const posts = [
     slug: "kuil-bersejarah-kyoto",
   },
   {
-    emoji: "♨️",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
     category: "Wellness",
     title: "Onsen 101: A Guide for Indonesian Travelers",
     excerpt: "Etiquette, tips, and onsen picks for a smooth, relaxing experience in Japan.",
@@ -41,7 +41,7 @@ const posts = [
     slug: "panduan-onsen-jepang",
   },
   {
-    emoji: "🚅",
+    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
     category: "Travel Tips",
     title: "How to Use the JR Pass (2025 Guide)",
     excerpt: "Save on transportation in Japan with the JR Pass. Purchase, activation, and route tips.",
@@ -50,7 +50,7 @@ const posts = [
     slug: "panduan-jr-pass-2025",
   },
   {
-    emoji: "🍂",
+    image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=800&q=80",
     category: "Autumn",
     title: "Momiji Season: Where to See Autumn Colors in Japan",
     excerpt: "Best places and timing to catch koyo (autumn leaves) across Japan.",
@@ -85,7 +85,9 @@ export default function Blog() {
               <div key={post.slug} className="col-md-6 col-lg-4">
                 <Link href={`/blog/${post.slug}`} className="text-decoration-none">
                   <div className="blog-card card h-100">
-                    <div className="blog-card-img">{post.emoji}</div>
+                    <div className="blog-card-img" style={{ padding: 0, background: "none" }}>
+                      <img src={post.image} alt={post.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    </div>
                     <div className="card-body p-4">
                       <span className="blog-category">{post.category}</span>
                       <h5 className="card-title mt-1">{post.title}</h5>

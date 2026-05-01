@@ -3,9 +3,15 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { MapIcon, BoltIcon, AdjustmentsIcon, HeartIcon } from "../components/Icons";
 
 const IMAGEKIT_BASE = "https://ik.imagekit.io/tourged";
 const PROJECT_BASE = `${IMAGEKIT_BASE}/Project%20tourged.id`;
+const SITE_URL = "https://tourged.id";
+const HOME_TITLE = "Custom Japan Trips for Indonesian Travelers | Tourged Travel";
+const HOME_DESCRIPTION =
+  "Plan a realistic, personal Japan trip with Tourged Travel. Custom itineraries for Private Trip, One-Day Trip, Honeymoon, and Japan Local Life, built for Indonesian travelers.";
+const OG_IMAGE = `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-1200,h-630,c-maintain_ratio`;
 
 const bannerSlides = [
   { src: `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Scenic Views" },
@@ -28,26 +34,26 @@ const services = [
   {
     image: "/services/private-trip.jpg",
     title: "Private Trip",
-    desc: "A fully tailored Japan trip built around your pace, priorities, and budget. Flexible schedule, curated spots, and a clear route.",
     href: "/packages/private-trip",
+    desc: "A fully tailored Japan trip built around your pace, priorities, and budget. Flexible schedule, curated spots, and a clear route.",
   },
   {
     image: "/services/one-day-trip.jpg",
     title: "One-Day Trip",
-    desc: "Short on time? Get a well-timed, efficient itinerary that hits the best highlights without feeling rushed.",
     href: "/packages/one-day-tour",
+    desc: "Short on time? Get a well-timed, efficient itinerary that hits the best highlights without feeling rushed.",
   },
   {
     image: "/services/honeymoon.jpg",
     title: "Honeymoon",
-    desc: "A romantic, cozy Japan itinerary with thoughtful details: scenic stays, slow mornings, and unforgettable date spots.",
     href: "/packages/honeymoon",
+    desc: "A romantic, cozy Japan itinerary with thoughtful details: scenic stays, slow mornings, and unforgettable date spots.",
   },
   {
     image: "/services/japan-local-life.jpg",
     title: "Japan Local Life",
-    desc: "A slower, more local Japan experience: neighborhoods, cafés, markets, small towns, and everyday spots tailored to your vibe.",
     href: "/packages/japan-local-life",
+    desc: "A slower, more local Japan experience: neighborhoods, cafés, markets, small towns, and everyday spots tailored to your vibe.",
   },
 ];
 
@@ -60,22 +66,22 @@ const steps = [
 
 const commitments = [
   {
-    icon: "🧭",
+    icon: "map",
     title: "Clear Route, Clear Budget",
     desc: "We plan day-by-day with realistic timing and cost ranges, so you know what you’re signing up for.",
   },
   {
-    icon: "⚡",
+    icon: "bolt",
     title: "Fast, Human Replies",
     desc: "As a new service, we keep things tight: quick responses, practical answers, and no copy-paste suggestions.",
   },
   {
-    icon: "🧩",
+    icon: "adjustments",
     title: "Built Around Your Style",
     desc: "Shopping, cafés, local neighborhoods, nature, or culture. We tailor the pace and priorities to your vibe.",
   },
   {
-    icon: "🤝",
+    icon: "heart",
     title: "Extra Care for Early Clients",
     desc: "You get more attention: tighter planning, more revisions, and a smoother end-to-end process.",
   },
@@ -83,7 +89,7 @@ const commitments = [
 
 const blogPosts = [
   {
-    emoji: "🌸",
+    image: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=800&q=80",
     category: "Spring",
     title: "Sakura in Japan 2025: A Practical Guide",
     date: "March 15, 2025",
@@ -91,7 +97,7 @@ const blogPosts = [
     slug: "panduan-sakura-jepang-2025",
   },
   {
-    emoji: "🍜",
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
     category: "Food",
     title: "10 Must-Try Foods for Your First Japan Trip",
     date: "April 2, 2025",
@@ -99,7 +105,7 @@ const blogPosts = [
     slug: "makanan-wajib-jepang",
   },
   {
-    emoji: "🏯",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
     category: "Culture",
     title: "Kyoto Temples: A First-Timer Friendly Route",
     date: "April 20, 2025",
@@ -114,66 +120,131 @@ const popularSpots = [
     name: "Tokyo",
     area: "Kanto",
     blurb: "City energy, shopping, cafés, neighborhoods, day trips.",
-    x: 70,
-    y: 57,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Tokyo%20Japan",
   },
   {
     id: "fuji",
     name: "Mt. Fuji / Hakone",
     area: "Kanto",
     blurb: "Iconic views, lakes, ryokan vibes, onsen options.",
-    x: 66,
-    y: 61,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Mt.%20Fuji%20Hakone%20Japan",
   },
   {
     id: "kyoto",
     name: "Kyoto",
     area: "Kansai",
     blurb: "Temples, old streets, calm mornings, culture-focused pace.",
-    x: 55,
-    y: 64,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Kyoto%20Japan",
   },
   {
     id: "osaka",
     name: "Osaka",
     area: "Kansai",
     blurb: "Food streets, fun nightlife, easy base for day trips.",
-    x: 53,
-    y: 67,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Osaka%20Japan",
   },
   {
     id: "sapporo",
     name: "Sapporo",
     area: "Hokkaido",
     blurb: "Cooler weather, nature, seafood, relaxed city feel.",
-    x: 77,
-    y: 19,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Sapporo%20Japan",
   },
   {
     id: "hiroshima",
     name: "Hiroshima",
     area: "Chugoku",
     blurb: "History, food, and an easy visit to Miyajima.",
-    x: 43,
-    y: 68,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hiroshima%20Japan",
   },
   {
     id: "fukuoka",
     name: "Fukuoka",
     area: "Kyushu",
     blurb: "Easy city base, street food, warmer weather, Kyushu access.",
-    x: 34,
-    y: 76,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Fukuoka%20Japan",
   },
   {
     id: "okinawa",
     name: "Okinawa",
     area: "Ryukyu Islands",
     blurb: "Island mood, beaches, slower days, tropical Japan.",
-    x: 23,
-    y: 86,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Okinawa%20Japan",
   },
 ];
+
+const homeFaqs = [
+  {
+    q: "I’m worried about the language barrier. Will I get lost?",
+    a: "You’ll be fine with a good plan. We provide simple directions, station names, and practical tips for trains, tickets, and basic phrases. For your trip style, we keep routes realistic so you’re not switching lines every 10 minutes.",
+  },
+  {
+    q: "Is Japan expensive? How do I control the budget?",
+    a: "Japan can be affordable if the route and transport are planned correctly. We map cost ranges for transport, meals, and tickets, then give options: budget-friendly, standard, or comfort. You choose the level, we keep it consistent.",
+  },
+  {
+    q: "Do I need a visa? Can you help?",
+    a: "Visa rules depend on your passport and current policies. We don’t issue visas, but we can guide you on the typical documents, timeline, and what to prepare so you’re not guessing.",
+  },
+  {
+    q: "What about internet, cashless payments, and IC cards?",
+    a: "We recommend the simplest setup for your route, such as eSIM or pocket WiFi, and explain where IC cards work best. We’ll also note when cash is still useful, such as small shops, rural areas, and some ticket machines.",
+  },
+  {
+    q: "I’m Muslim. Is halal food hard to find?",
+    a: "It depends on the city. We can suggest Muslim-friendly areas and practical options, including seafood or vegetarian choices. We’ll be transparent when choices are limited so expectations stay realistic.",
+  },
+  {
+    q: "How does your service work, and what do I actually get?",
+    a: "Start with a free consultation. Then we propose a route and budget range. After you confirm, we deliver a day-by-day itinerary, transport guidance, and recommendations tailored to your vibe. As a new service, early clients get extra attention and revisions.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TravelAgency",
+      "@id": `${SITE_URL}/#travelagency`,
+      name: "Tourged Travel",
+      url: SITE_URL,
+      logo: `${SITE_URL}/tourged-logo.svg`,
+      email: "tourgedid@gmail.com",
+      areaServed: [
+        { "@type": "Country", name: "Indonesia" },
+        { "@type": "Country", name: "Japan" },
+      ],
+      serviceType: [
+        "Custom Japan itinerary planning",
+        "Private Japan trip planning",
+        "One-day Japan trip planning",
+        "Japan honeymoon planning",
+        "Japan local life travel planning",
+      ],
+      description: HOME_DESCRIPTION,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Tourged Travel",
+      url: SITE_URL,
+      description: HOME_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#travelagency` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: homeFaqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    },
+  ],
+};
 
 export default function Home() {
   useEffect(() => {
@@ -187,13 +258,29 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tourged Travel — Curated Japan Trips</title>
+        <title>{HOME_TITLE}</title>
         <meta
           name="description"
-          content="Curated Japan trips for Indonesian travelers. Custom itineraries for Private Trip, One-Day Trip, Honeymoon, and Japan Local Life. Start with a free consultation."
+          content={HOME_DESCRIPTION}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Tourged Travel" />
+        <meta property="og:title" content={HOME_TITLE} />
+        <meta property="og:description" content={HOME_DESCRIPTION} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:alt" content="Japan travel scenery curated by Tourged Travel" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={HOME_TITLE} />
+        <meta name="twitter:description" content={HOME_DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
 
       <Navbar />
@@ -221,7 +308,7 @@ export default function Home() {
           <div className="hero-overlay">
             <div className="container">
               <div className="hero-overlay-inner">
-                <span className="hero-badge">✨ Curated Japan Trips for Indonesian Travelers</span>
+                <span className="hero-badge">Curated Japan Trips for Indonesian Travelers</span>
                 <h1 className="hero-title hero-title-on-image mb-3">
                   Japan Trips That Feel
                   <br />
@@ -232,122 +319,22 @@ export default function Home() {
                 </p>
                 <div className="d-flex flex-wrap gap-3">
                   <a
-                    href="https://wa.me/62XXXXXXXXXX"
+                    href="https://wa.me/6281280904772"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary-custom"
                   >
-                    💬 Start Free Consultation
+                    Start Free Consultation
                   </a>
                   <a href="#map" className="btn-outline-custom">
                     Explore Popular Spots →
                   </a>
                 </div>
                 <div className="hero-mini-proof">
-                  <span>🧭 Clear route</span>
-                  <span>💸 Clear budget</span>
-                  <span>🤝 Extra care for early clients</span>
+                  <span>Clear route</span>
+                  <span>Clear budget</span>
+                  <span>Extra care for early clients</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map */}
-      <section className="map-section py-5" id="map">
-        <div className="container py-3">
-          <div className="row align-items-start g-4">
-            <div className="col-lg-5">
-              <p className="section-label">Map</p>
-              <h2 className="section-title mb-2">Popular Spots, One Click Away</h2>
-              <p className="text-muted" style={{ lineHeight: 1.75 }}>
-                Tap a pin to see what each area is best for. We’ll help you pick a route that matches your vibe and timing.
-              </p>
-              <div className="map-legend mt-3">
-                <span className="map-legend-dot" style={{ background: "var(--primary)" }} /> Most requested
-                <span className="map-legend-dot ms-3" style={{ background: "var(--accent)" }} /> Great for first-timers
-              </div>
-            </div>
-
-            <div className="col-lg-7">
-              <div className="map-shell">
-                <div className="map-surface">
-                  <svg className="japan-svg" viewBox="0 0 900 560" role="img" aria-label="Japan map">
-                    <defs>
-                      <linearGradient id="jpGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stopColor="#ffffff" />
-                        <stop offset="1" stopColor="#fbfaf6" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      className="japan-region"
-                      d="M652 56c35-18 79-10 106 19 27 28 27 63 6 87-19 22-52 24-81 11-29-14-48-40-44-72 2-19 7-34 13-45z"
-                    />
-                    <path
-                      className="japan-region"
-                      d="M684 180c31 12 53 36 57 67 4 35-17 55-47 65-31 10-54 20-70 45-20 31-43 50-77 57-41 9-75 3-109 25-34 21-69 35-109 25-32-8-45-31-34-56 10-25 42-31 75-41 39-12 62-31 81-61 18-28 48-44 82-48 37-4 63-20 85-45 19-21 39-39 66-33z"
-                    />
-                    <path
-                      className="japan-region"
-                      d="M464 404c29-8 55-3 76 13 16 12 19 30 4 42-17 13-48 10-74 0-23-10-45-13-67-5-18 7-34-1-36-15-2-14 14-25 40-27 19-1 35-3 57-8z"
-                    />
-                    <path
-                      className="japan-region"
-                      d="M250 391c30-18 67-14 91 8 20 18 17 46-7 62-19 13-34 31-40 53-7 25-35 34-57 19-22-16-18-45-5-69 10-20 8-39 18-73z"
-                    />
-                    <g className="japan-island-chain">
-                      <circle cx="214" cy="470" r="9" />
-                      <circle cx="188" cy="492" r="7" />
-                      <circle cx="159" cy="514" r="8" />
-                      <circle cx="126" cy="528" r="6" />
-                    </g>
-                    <g className="map-region-labels">
-                      <text x="694" y="60">Hokkaido</text>
-                      <text x="590" y="330">Honshu</text>
-                      <text x="454" y="482">Shikoku</text>
-                      <text x="250" y="546">Kyushu</text>
-                      <text x="92" y="510">Okinawa</text>
-                    </g>
-                  </svg>
-
-                  {popularSpots.map((spot) => (
-                    <button
-                      key={spot.id}
-                      type="button"
-                      className="map-pin"
-                      style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
-                      onClick={() => {
-                        const el = document.getElementById(`spot-${spot.id}`);
-                        if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                      }}
-                      aria-label={`Show ${spot.name}`}
-                    >
-                      <span className="map-pin-dot" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="row g-3 mt-3">
-                {popularSpots.map((spot) => (
-                  <div key={spot.id} className="col-sm-6">
-                    <div id={`spot-${spot.id}`} className="map-card">
-                      <div className="d-flex justify-content-between align-items-start gap-3">
-                        <div>
-                          <h6 className="fw-bold mb-1" style={{ color: "var(--dark)" }}>
-                            {spot.name}
-                          </h6>
-                          <div className="small text-muted">{spot.area}</div>
-                        </div>
-                        <span className="map-chip">Popular</span>
-                      </div>
-                      <p className="small text-muted mb-0 mt-2" style={{ lineHeight: 1.65 }}>
-                        {spot.blurb}
-                      </p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -358,25 +345,27 @@ export default function Home() {
       <section className="py-5 mt-2" id="layanan">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Services</p>
-            <h2 className="section-title">Trips for Every Moment</h2>
+            <p className="section-label">What We Plan</p>
+            <h2 className="section-title">Choose the Travel Style That Fits You</h2>
             <p className="text-muted mt-2" style={{ maxWidth: 520, margin: "0 auto" }}>
-              From solo trips to honeymoons, we design the best version of Japan for your preferences.
+              Start with one clear direction. We can shape the details after we understand your dates, budget, and comfort level.
             </p>
           </div>
           <div className="row g-4">
             {services.map((s) => (
               <div key={s.title} className="col-sm-6 col-lg-3">
-                <div className="service-card card h-100 overflow-hidden border-0 shadow-sm">
-                  <img src={s.image} alt={s.title} className="card-img-top" style={{ objectFit: 'cover', height: '180px' }} />
-                  <div className="card-body p-4">
-                    <h5 className="card-title mb-2">{s.title}</h5>
-                    <p className="card-text mb-3 text-muted">{s.desc}</p>
-                    <Link href={s.href} className="btn-link-custom text-decoration-none fw-semibold">
-                      Learn more →
-                    </Link>
+                <Link href={s.href} className="text-decoration-none d-block h-100">
+                  <div className="service-card card h-100 overflow-hidden border-0 shadow-sm">
+                    <img src={s.image} alt={s.title} className="card-img-top" style={{ objectFit: 'cover', height: '180px' }} />
+                    <div className="card-body p-4">
+                      <h5 className="card-title mb-2">{s.title}</h5>
+                      <p className="card-text mb-3 text-muted">{s.desc}</p>
+                      <span className="btn-link-custom fw-semibold">
+                        Lihat Detail →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -417,7 +406,12 @@ export default function Home() {
               <div key={c.title} className="col-md-6 col-lg-3">
                 <div className="testimonial-card h-100">
                   <div className="d-flex align-items-center gap-2 mb-2" style={{ color: "var(--dark)" }}>
-                    <span style={{ fontSize: "1.2rem" }}>{c.icon}</span>
+                    <span style={{ color: "var(--primary)" }}>
+                      {c.icon === "map" && <MapIcon size={20} />}
+                      {c.icon === "bolt" && <BoltIcon size={20} />}
+                      {c.icon === "adjustments" && <AdjustmentsIcon size={20} />}
+                      {c.icon === "heart" && <HeartIcon size={20} />}
+                    </span>
                     <h6 className="m-0 fw-bold">{c.title}</h6>
                   </div>
                   <p className="testimonial-text mb-0">{c.desc}</p>
@@ -455,6 +449,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Map */}
+      <section className="map-section py-5" id="map">
+        <div className="container py-3">
+          <div className="row align-items-start g-4">
+            <div className="col-lg-5">
+              <p className="section-label">Map</p>
+              <h2 className="section-title mb-2">Popular Areas to Start From</h2>
+              <p className="text-muted" style={{ lineHeight: 1.75 }}>
+                Use this as a first orientation. We will help you decide which areas make sense based on your trip length, budget, and pace.
+              </p>
+              <a
+                href="https://www.google.com/maps/place/Japan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-link-custom mt-2"
+              >
+                Open Japan in Google Maps →
+              </a>
+            </div>
+
+            <div className="col-lg-7">
+              <div className="map-shell">
+                <div className="map-surface">
+                  <iframe
+                    title="Japan on Google Maps"
+                    className="google-map-frame"
+                    src="https://www.google.com/maps?q=35.6762,139.6503&z=5&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
+
+              <div className="row g-3 mt-3">
+                {popularSpots.map((spot) => (
+                  <div key={spot.id} className="col-sm-6">
+                    <div id={`spot-${spot.id}`} className="map-card">
+                      <div className="d-flex justify-content-between align-items-start gap-3">
+                        <div>
+                          <h6 className="fw-bold mb-1" style={{ color: "var(--dark)" }}>
+                            {spot.name}
+                          </h6>
+                          <div className="small text-muted">{spot.area}</div>
+                        </div>
+                        <span className="map-chip">Popular</span>
+                      </div>
+                      <p className="small text-muted mb-0 mt-2" style={{ lineHeight: 1.65 }}>
+                        {spot.blurb}
+                      </p>
+                      <a
+                        href={spot.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-link-custom mt-2"
+                      >
+                        Open map →
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Preview */}
       <section className="py-5 bg-light-custom">
         <div className="container py-3">
@@ -472,7 +532,9 @@ export default function Home() {
               <div key={post.slug} className="col-md-4">
                 <Link href={`/blog/${post.slug}`} className="text-decoration-none">
                   <div className="blog-card card">
-                    <div className="blog-card-img">{post.emoji}</div>
+                    <div className="blog-card-img" style={{ padding: 0, background: "none" }}>
+                      <img src={post.image} alt={post.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    </div>
                     <div className="card-body p-4">
                       <span className="blog-category">{post.category}</span>
                       <h5 className="card-title">{post.title}</h5>
@@ -505,32 +567,7 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="accordion" id="homeFaq">
-                {[
-                  {
-                    q: "I’m worried about the language barrier. Will I get lost?",
-                    a: "You’ll be fine with a good plan. We provide simple directions, station names, and practical tips for trains, tickets, and basic phrases. For your trip style, we keep routes realistic so you’re not switching lines every 10 minutes.",
-                  },
-                  {
-                    q: "Is Japan expensive? How do I control the budget?",
-                    a: "Japan can be affordable if the route and transport are planned correctly. We map cost ranges (transport, meals, tickets) and give options: budget-friendly, standard, or comfort. You choose the level, we keep it consistent.",
-                  },
-                  {
-                    q: "Do I need a visa? Can you help?",
-                    a: "Visa rules depend on your passport and current policies. We don’t issue visas, but we can guide you on the typical documents, timeline, and what to prepare so you’re not guessing.",
-                  },
-                  {
-                    q: "What about internet, cashless payments, and IC cards?",
-                    a: "We recommend the simplest setup for your route (eSIM/pocket WiFi) and explain where IC cards work best. We’ll also note when cash is still useful (small shops, rural areas, some ticket machines).",
-                  },
-                  {
-                    q: "I’m Muslim. Is halal food hard to find?",
-                    a: "It depends on the city. We can suggest Muslim-friendly areas and practical options (seafood/vegetarian choices). We’ll be transparent when choices are limited so expectations stay realistic.",
-                  },
-                  {
-                    q: "How does your service work, and what do I actually get?",
-                    a: "Start with a free consultation. Then we propose a route + budget range. After you confirm, we deliver a day-by-day itinerary, transport guidance, and recommendations tailored to your vibe. As a new service, early clients get extra attention and revisions.",
-                  },
-                ].map((item, idx) => (
+                {homeFaqs.map((item, idx) => (
                   <div className="accordion-item" key={item.q} style={{ borderRadius: 14, overflow: "hidden", border: "1px solid var(--border)" }}>
                     <h2 className="accordion-header">
                       <button
@@ -579,19 +616,19 @@ export default function Home() {
           </p>
           <div className="d-flex flex-wrap justify-content-center gap-3">
             <a
-              href="https://wa.me/62XXXXXXXXXX"
+              href="https://wa.me/6281280904772"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-light fw-semibold px-4 py-3 rounded-pill"
               style={{ color: "#c0392b" }}
             >
-              💬 Chat on WhatsApp
+              Chat on WhatsApp
             </a>
             <a
-              href="mailto:hello@japantourged.com"
+              href="mailto:tourgedid@gmail.com"
               className="btn btn-outline-light fw-semibold px-4 py-3 rounded-pill"
             >
-              📧 Email Us
+              Email Us
             </a>
           </div>
         </div>
