@@ -108,6 +108,57 @@ const blogPosts = [
   },
 ];
 
+const popularSpots = [
+  {
+    id: "tokyo",
+    name: "Tokyo",
+    area: "Kanto",
+    blurb: "City energy, shopping, cafés, neighborhoods, day trips.",
+    x: 64,
+    y: 56,
+  },
+  {
+    id: "fuji",
+    name: "Mt. Fuji / Hakone",
+    area: "Kanto",
+    blurb: "Iconic views, lakes, ryokan vibes, onsen options.",
+    x: 58,
+    y: 60,
+  },
+  {
+    id: "kyoto",
+    name: "Kyoto",
+    area: "Kansai",
+    blurb: "Temples, old streets, calm mornings, culture-focused pace.",
+    x: 47,
+    y: 67,
+  },
+  {
+    id: "osaka",
+    name: "Osaka",
+    area: "Kansai",
+    blurb: "Food streets, fun nightlife, easy base for day trips.",
+    x: 44,
+    y: 70,
+  },
+  {
+    id: "sapporo",
+    name: "Sapporo",
+    area: "Hokkaido",
+    blurb: "Cooler weather, nature, seafood, relaxed city feel.",
+    x: 74,
+    y: 26,
+  },
+  {
+    id: "hiroshima",
+    name: "Hiroshima",
+    area: "Chugoku",
+    blurb: "History, food, and an easy visit to Miyajima.",
+    x: 33,
+    y: 76,
+  },
+];
+
 export default function Home() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -132,89 +183,133 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="hero-section">
-        <div className="container">
-          <div className="row align-items-center g-5">
-            <div className="col-lg-6">
-              <span className="hero-badge">✨ Curated Japan Trips for Indonesian Travelers</span>
-              <h1 className="hero-title mb-3">
-                Japan Trips That Feel<br />
-                <span>Personal, Smooth, and Meaningful</span>
-              </h1>
-              <p className="hero-subtitle mb-4">
-                From first-time visitors to repeat travelers, we design detailed and flexible itineraries tailored to your travel style, so every day in Japan feels worth it.
-              </p>
-              <div className="d-flex flex-wrap gap-3">
-                <a
-                  href="https://wa.me/62XXXXXXXXXX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary-custom"
-                >
-                  💬 Start Free Consultation
-                </a>
-                <a
-                  href="https://wa.me/62XXXXXXXXXX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline-custom"
-                >
-                  View Trip Plan →
-                </a>
+      <section className="hero-full">
+        <div id="heroFullCarousel" className="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+          <div className="carousel-inner">
+            {bannerSlides.map((slide, idx) => (
+              <div key={idx} className={`carousel-item ${idx === 0 ? "active" : ""}`}>
+                <div className="hero-slide">
+                  <img src={slide.src} alt={slide.alt} className="hero-slide-img" />
+                  <div className="hero-slide-scrim" />
+                </div>
               </div>
-              <div className="hero-stats">
-                <div className="stat-item">
-                  <h3>Founding Batch</h3>
-                  <p>Open for Our First Clients</p>
+            ))}
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#heroFullCarousel" data-bs-slide="prev" aria-label="Previous slide">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#heroFullCarousel" data-bs-slide="next" aria-label="Next slide">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+
+          <div className="hero-overlay">
+            <div className="container">
+              <div className="hero-overlay-inner">
+                <span className="hero-badge">✨ Curated Japan Trips for Indonesian Travelers</span>
+                <h1 className="hero-title hero-title-on-image mb-3">
+                  Japan Trips That Feel
+                  <br />
+                  <span>Personal, Smooth, and Meaningful</span>
+                </h1>
+                <p className="hero-subtitle hero-subtitle-on-image mb-4">
+                  A realistic plan with clear pacing and budget ranges. As a new service, early clients get extra care and revisions.
+                </p>
+                <div className="d-flex flex-wrap gap-3">
+                  <a
+                    href="https://wa.me/62XXXXXXXXXX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary-custom"
+                  >
+                    💬 Start Free Consultation
+                  </a>
+                  <a href="#map" className="btn-outline-custom">
+                    Explore Popular Spots →
+                  </a>
                 </div>
-                <div className="stat-item">
-                  <h3>100%</h3>
-                  <p>Personal Trip Assistance</p>
-                </div>
-                <div className="stat-item">
-                  <h3>Early Bird</h3>
-                  <p>Special Value for First Bookings</p>
+                <div className="hero-mini-proof">
+                  <span>🧭 Clear route</span>
+                  <span>💸 Clear budget</span>
+                  <span>🤝 Extra care for early clients</span>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 d-none d-lg-block">
-              <div className="hero-video-card position-relative p-0" style={{ height: "480px", overflow: "visible" }}>
-                {/* Keep overflow visible for floating cards, but clip the media to rounded corners */}
-                <div style={{ borderRadius: "24px", height: "100%", overflow: "hidden" }}>
-                  <div id="heroBannerCarousel" className="carousel slide h-100" data-bs-ride="carousel">
-                    <div className="carousel-inner h-100">
-                      {bannerSlides.map((slide, idx) => (
-                        <div key={idx} className={`carousel-item h-100 ${idx === 0 ? "active" : ""}`}>
-                          <img
-                            src={slide.src}
-                            alt={slide.alt}
-                            className="d-block w-100 h-100"
-                            style={{ objectFit: "cover" }}
-                          />
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="map-section py-5" id="map">
+        <div className="container py-3">
+          <div className="row align-items-start g-4">
+            <div className="col-lg-5">
+              <p className="section-label">Map</p>
+              <h2 className="section-title mb-2">Popular Spots, One Click Away</h2>
+              <p className="text-muted" style={{ lineHeight: 1.75 }}>
+                Tap a pin to see what each area is best for. We’ll help you pick a route that matches your vibe and timing.
+              </p>
+              <div className="map-legend mt-3">
+                <span className="map-legend-dot" style={{ background: "var(--primary)" }} /> Most requested
+                <span className="map-legend-dot ms-3" style={{ background: "var(--accent)" }} /> Great for first-timers
+              </div>
+            </div>
+
+            <div className="col-lg-7">
+              <div className="map-shell">
+                <div className="map-surface">
+                  <svg className="japan-svg" viewBox="0 0 100 100" role="img" aria-label="Japan map">
+                    <defs>
+                      <linearGradient id="jpGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stopColor="#ffffff" />
+                        <stop offset="1" stopColor="#fbfaf6" />
+                      </linearGradient>
+                    </defs>
+                    {/* Stylized silhouette (not geographic-accurate) */}
+                    <path
+                      d="M72 10c6 5 7 12 4 18-2 4-2 7 1 10 5 6 6 12 2 17-3 4-7 6-11 7-2 1-3 2-3 4 0 6-4 10-11 12-7 2-12 4-14 7-2 4-6 6-11 5-5-1-8-5-7-10 1-5 4-8 9-10 4-2 7-5 7-9 0-5-4-9-9-12-6-4-8-9-6-14 2-5 7-8 13-8 2 0 3-1 4-3 2-5 6-8 12-9 6-1 11-2 13-5 2-3 4-5 7-7z"
+                      fill="url(#jpGrad)"
+                      stroke="rgba(62,61,143,0.22)"
+                      strokeWidth="1.1"
+                    />
+                  </svg>
+
+                  {popularSpots.map((spot) => (
+                    <button
+                      key={spot.id}
+                      type="button"
+                      className="map-pin"
+                      style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
+                      onClick={() => {
+                        const el = document.getElementById(`spot-${spot.id}`);
+                        if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                      }}
+                      aria-label={`Show ${spot.name}`}
+                    >
+                      <span className="map-pin-dot" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="row g-3 mt-3">
+                {popularSpots.map((spot) => (
+                  <div key={spot.id} className="col-sm-6">
+                    <div id={`spot-${spot.id}`} className="map-card">
+                      <div className="d-flex justify-content-between align-items-start gap-3">
+                        <div>
+                          <h6 className="fw-bold mb-1" style={{ color: "var(--dark)" }}>
+                            {spot.name}
+                          </h6>
+                          <div className="small text-muted">{spot.area}</div>
                         </div>
-                      ))}
+                        <span className="map-chip">Popular</span>
+                      </div>
+                      <p className="small text-muted mb-0 mt-2" style={{ lineHeight: 1.65 }}>
+                        {spot.blurb}
+                      </p>
                     </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
-                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
-                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span className="visually-hidden">Next</span>
-                    </button>
                   </div>
-                </div>
-                {/* Floating info cards */}
-                <div className="hero-floating-card" style={{ top: "1.5rem", left: "-1.2rem" }}>
-                  <span className="hero-floating-dot" style={{ background: "#22c55e" }} />
-                  🌸 Seasonal Trip Timing
-                </div>
-                <div className="hero-floating-card" style={{ bottom: "5.5rem", right: "-1.2rem" }}>
-                  🧭 Clear Route, Clear Budget
-                </div>
-                <div className="hero-floating-card" style={{ bottom: "2rem", left: "-1.2rem" }}>
-                  ✈️ Tailored Itinerary
-                </div>
+                ))}
               </div>
             </div>
           </div>
