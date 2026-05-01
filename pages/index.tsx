@@ -131,13 +131,13 @@ export default function Home() {
         <div className="container">
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
-              <span className="hero-badge">✨ Curated Japan Journey for Indonesian Travelers</span>
+              <span className="hero-badge">✨ Curated Japan Trips for Indonesian Travelers</span>
               <h1 className="hero-title mb-3">
-                Liburan ke Jepang yang<br />
-                <span>Terasa Personal, Bukan Pasaran</span>
+                Japan Trips That Feel<br />
+                <span>Personal, Smooth, and Meaningful</span>
               </h1>
               <p className="hero-subtitle mb-4">
-                Dari first-timer sampai repeat traveler, kami susun itinerary yang detail, fleksibel, dan relevan dengan gaya liburan kamu, supaya setiap hari di Jepang terasa worth it.
+                From first-time visitors to repeat travelers, we design detailed and flexible itineraries tailored to your travel style, so every day in Japan feels worth it.
               </p>
               <div className="d-flex flex-wrap gap-3">
                 <a
@@ -146,7 +146,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-primary-custom"
                 >
-                  💬 Mulai Konsultasi Gratis
+                  💬 Start Free Consultation
                 </a>
                 <a
                   href="https://wa.me/62XXXXXXXXXX"
@@ -154,7 +154,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-outline-custom"
                 >
-                  Lihat Rencana Trip →
+                  View Trip Plan →
                 </a>
               </div>
               <div className="hero-stats">
