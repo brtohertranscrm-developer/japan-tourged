@@ -358,6 +358,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-5" id="faq">
+        <div className="container py-3">
+          <div className="text-center mb-5">
+            <p className="section-label">FAQ</p>
+            <h2 className="section-title">First Time to Japan? Totally Normal.</h2>
+            <p className="text-muted mt-2" style={{ maxWidth: 720, margin: "0 auto" }}>
+              Here are the most common worries we hear from Indonesian travelers, and how we help you plan around them.
+            </p>
+          </div>
+
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="accordion" id="homeFaq">
+                {[
+                  {
+                    q: "I’m worried about the language barrier. Will I get lost?",
+                    a: "You’ll be fine with a good plan. We provide simple directions, station names, and practical tips for trains, tickets, and basic phrases. For your trip style, we keep routes realistic so you’re not switching lines every 10 minutes.",
+                  },
+                  {
+                    q: "Is Japan expensive? How do I control the budget?",
+                    a: "Japan can be affordable if the route and transport are planned correctly. We map cost ranges (transport, meals, tickets) and give options: budget-friendly, standard, or comfort. You choose the level, we keep it consistent.",
+                  },
+                  {
+                    q: "Do I need a visa? Can you help?",
+                    a: "Visa rules depend on your passport and current policies. We don’t issue visas, but we can guide you on the typical documents, timeline, and what to prepare so you’re not guessing.",
+                  },
+                  {
+                    q: "What about internet, cashless payments, and IC cards?",
+                    a: "We recommend the simplest setup for your route (eSIM/pocket WiFi) and explain where IC cards work best. We’ll also note when cash is still useful (small shops, rural areas, some ticket machines).",
+                  },
+                  {
+                    q: "I’m Muslim. Is halal food hard to find?",
+                    a: "It depends on the city. We can suggest Muslim-friendly areas and practical options (seafood/vegetarian choices). We’ll be transparent when choices are limited so expectations stay realistic.",
+                  },
+                  {
+                    q: "How does your service work, and what do I actually get?",
+                    a: "Start with a free consultation. Then we propose a route + budget range. After you confirm, we deliver a day-by-day itinerary, transport guidance, and recommendations tailored to your vibe. As a new service, early clients get extra attention and revisions.",
+                  },
+                ].map((item, idx) => (
+                  <div className="accordion-item" key={item.q} style={{ borderRadius: 14, overflow: "hidden", border: "1px solid var(--border)" }}>
+                    <h2 className="accordion-header">
+                      <button
+                        className={`accordion-button ${idx === 0 ? "" : "collapsed"}`}
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#homeFaq-${idx}`}
+                        aria-expanded={idx === 0 ? "true" : "false"}
+                        aria-controls={`homeFaq-${idx}`}
+                        style={{ background: "#fff", color: "var(--dark)", fontWeight: 700 }}
+                      >
+                        {item.q}
+                      </button>
+                    </h2>
+                    <div
+                      id={`homeFaq-${idx}`}
+                      className={`accordion-collapse collapse ${idx === 0 ? "show" : ""}`}
+                      data-bs-parent="#homeFaq"
+                    >
+                      <div className="accordion-body" style={{ background: "#fffef9", color: "var(--text)", lineHeight: 1.75 }}>
+                        {item.a}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mt-4">
+                <Link href="/faq" className="btn btn-outline-danger rounded-pill px-4">
+                  View Full FAQ →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cta-section py-5">
         <div className="container py-3 text-center">
