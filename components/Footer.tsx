@@ -39,7 +39,6 @@ export default function Footer() {
               {[
                 ["Private Trip", "/packages/private-trip"],
                 ["One-Day Trip", "/packages/one-day-tour"],
-                ["Company Trip", "/packages/company-trip"],
                 ["Honeymoon", "/packages/honeymoon"],
                 ["Japan Local Life", "/packages/japan-local-life"],
               ].map(([label, href]) => (

@@ -58,21 +58,26 @@ const steps = [
   { num: "4", title: "Enjoy Japan", desc: "Travel with peace of mind. We stay on standby to support you along the way." },
 ];
 
-const testimonials = [
+const commitments = [
   {
-    name: "Rina Susanti",
-    origin: "Jakarta",
-    text: "The service was amazing. The itinerary felt detailed and really matched what we wanted. Kyoto and Osaka became a core memory for our family.",
+    icon: "🧭",
+    title: "Clear Route, Clear Budget",
+    desc: "We plan day-by-day with realistic timing and cost ranges, so you know what you’re signing up for.",
   },
   {
-    name: "Budi Hartono",
-    origin: "Surabaya",
-    text: "Our honeymoon in Japan felt smooth and well-planned. The team was responsive and paid attention to the small details.",
+    icon: "⚡",
+    title: "Fast, Human Replies",
+    desc: "As a new service, we keep things tight: quick responses, practical answers, and no copy-paste suggestions.",
   },
   {
-    name: "Dewi Rahayu",
-    origin: "Bandung",
-    text: "Our company trip to Tokyo went great. The team helped from start to finish. We’d love to plan the next one together.",
+    icon: "🧩",
+    title: "Built Around Your Style",
+    desc: "Shopping, cafés, local neighborhoods, nature, or culture. We tailor the pace and priorities to your vibe.",
+  },
+  {
+    icon: "🤝",
+    title: "Extra Care for Early Clients",
+    desc: "You get more attention: tighter planning, more revisions, and a smoother end-to-end process.",
   },
 ];
 
@@ -118,7 +123,7 @@ export default function Home() {
         <title>Tourged Travel — Curated Japan Trips</title>
         <meta
           name="description"
-          content="Curated Japan trips for Indonesian travelers. Custom itineraries for private trips, honeymoon, and company trips. Start with a free consultation."
+          content="Curated Japan trips for Indonesian travelers. Custom itineraries for Private Trip, One-Day Trip, Honeymoon, and Japan Local Life. Start with a free consultation."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -263,27 +268,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Commitments */}
       <section className="py-5">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Testimonials</p>
-            <h2 className="section-title">What Travelers Say</h2>
-            <p className="text-muted mt-2">We’re building with our earliest clients. Your trip gets extra attention, end-to-end.</p>
+            <p className="section-label">Our Promise</p>
+            <h2 className="section-title">Realistic Planning, Extra Care</h2>
+            <p className="text-muted mt-2">We’re still new, so we focus on doing the basics extremely well for every early client.</p>
           </div>
           <div className="row g-4">
-            {testimonials.map((t) => (
-              <div key={t.name} className="col-md-4">
-                <div className="testimonial-card">
-                  <div className="testimonial-stars">★★★★★</div>
-                  <p className="testimonial-text">"{t.text}"</p>
-                  <div className="testimonial-author">
-                    <div className="testimonial-avatar">{t.name[0]}</div>
-                    <div>
-                      <h6>{t.name}</h6>
-                      <small>{t.origin}</small>
-                    </div>
+            {commitments.map((c) => (
+              <div key={c.title} className="col-md-6 col-lg-3">
+                <div className="testimonial-card h-100">
+                  <div className="d-flex align-items-center gap-2 mb-2" style={{ color: "var(--dark)" }}>
+                    <span style={{ fontSize: "1.2rem" }}>{c.icon}</span>
+                    <h6 className="m-0 fw-bold">{c.title}</h6>
                   </div>
+                  <p className="testimonial-text mb-0">{c.desc}</p>
                 </div>
               </div>
             ))}
