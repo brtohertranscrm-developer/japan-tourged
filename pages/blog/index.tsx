@@ -6,56 +6,56 @@ import Footer from "../../components/Footer";
 const posts = [
   {
     emoji: "🌸",
-    category: "Musim Bunga",
-    title: "Panduan Lengkap Melihat Sakura di Jepang 2025",
-    excerpt: "Temukan lokasi terbaik dan waktu yang tepat untuk menikmati keindahan bunga sakura di seluruh Jepang.",
-    date: "15 Maret 2025",
-    readTime: "8 menit",
+    category: "Spring",
+    title: "Sakura in Japan 2025: A Practical Guide",
+    excerpt: "Find the best locations and the right timing to enjoy cherry blossoms across Japan.",
+    date: "March 15, 2025",
+    readTime: "8 min",
     slug: "panduan-sakura-jepang-2025",
   },
   {
     emoji: "🍜",
-    category: "Kuliner",
-    title: "10 Makanan Wajib Dicoba Saat Pertama Kali ke Jepang",
-    excerpt: "Dari ramen otentik hingga takoyaki jalanan, ini daftar kuliner Jepang yang tidak boleh Anda lewatkan.",
-    date: "2 April 2025",
-    readTime: "6 menit",
+    category: "Food",
+    title: "10 Must-Try Foods for Your First Japan Trip",
+    excerpt: "From authentic ramen to street takoyaki, here are the classics you should not miss.",
+    date: "April 2, 2025",
+    readTime: "6 min",
     slug: "makanan-wajib-jepang",
   },
   {
     emoji: "🏯",
-    category: "Budaya",
-    title: "Menjelajahi Kuil-Kuil Bersejarah di Kyoto",
-    excerpt: "Panduan lengkap mengunjungi Fushimi Inari, Kinkaku-ji, dan destinasi budaya terbaik Kyoto.",
-    date: "20 April 2025",
-    readTime: "10 menit",
+    category: "Culture",
+    title: "Kyoto Temples: A First-Timer Friendly Route",
+    excerpt: "A simple guide to Fushimi Inari, Kinkaku-ji, and Kyoto’s best cultural spots.",
+    date: "April 20, 2025",
+    readTime: "10 min",
     slug: "kuil-bersejarah-kyoto",
   },
   {
     emoji: "♨️",
     category: "Wellness",
-    title: "Pengalaman Onsen: Panduan untuk Wisatawan Indonesia",
-    excerpt: "Tata cara, etiket, dan rekomendasi onsen terbaik untuk pengalaman relaksasi sempurna di Jepang.",
-    date: "5 Mei 2025",
-    readTime: "7 menit",
+    title: "Onsen 101: A Guide for Indonesian Travelers",
+    excerpt: "Etiquette, tips, and onsen picks for a smooth, relaxing experience in Japan.",
+    date: "May 5, 2025",
+    readTime: "7 min",
     slug: "panduan-onsen-jepang",
   },
   {
     emoji: "🚅",
-    category: "Tips Perjalanan",
-    title: "Cara Menggunakan JR Pass: Panduan Lengkap 2025",
-    excerpt: "Hemat biaya transportasi di Jepang dengan JR Pass. Cara beli, aktivasi, dan rute terbaik.",
-    date: "12 Mei 2025",
-    readTime: "9 menit",
+    category: "Travel Tips",
+    title: "How to Use the JR Pass (2025 Guide)",
+    excerpt: "Save on transportation in Japan with the JR Pass. Purchase, activation, and route tips.",
+    date: "May 12, 2025",
+    readTime: "9 min",
     slug: "panduan-jr-pass-2025",
   },
   {
     emoji: "🍂",
-    category: "Musim Gugur",
-    title: "Momiji: Panduan Menikmati Dedaunan Merah di Jepang",
-    excerpt: "Lokasi dan waktu terbaik untuk menyaksikan keindahan koyo (dedaunan musim gugur) di Jepang.",
-    date: "20 Mei 2025",
-    readTime: "8 menit",
+    category: "Autumn",
+    title: "Momiji Season: Where to See Autumn Colors in Japan",
+    excerpt: "Best places and timing to catch koyo (autumn leaves) across Japan.",
+    date: "May 20, 2025",
+    readTime: "8 min",
     slug: "panduan-momiji-jepang",
   },
 ];
@@ -64,8 +64,8 @@ export default function Blog() {
   return (
     <>
       <Head>
-        <title>Blog & Tips Wisata Jepang — Japan Tourged</title>
-        <meta name="description" content="Artikel, panduan, dan tips perjalanan wisata Jepang terlengkap untuk traveler Indonesia." />
+        <title>Blog & Tips — Tourged Travel</title>
+        <meta name="description" content="Articles, guides, and practical Japan travel tips for Indonesian travelers." />
       </Head>
 
       <Navbar />
@@ -73,8 +73,8 @@ export default function Blog() {
       <section className="page-hero text-center">
         <div className="container">
           <span className="page-hero-label">Blog & Tips</span>
-          <h1 className="display-5 fw-bold mt-2">Inspirasi Perjalanan Jepang</h1>
-          <p className="mt-3" style={{ color: "#6b7280" }}>Panduan, tips, dan cerita dari Jepang untuk traveler Indonesia.</p>
+          <h1 className="display-5 fw-bold mt-2">Japan Trip Inspiration</h1>
+          <p className="mt-3" style={{ color: "#6b7280" }}>Guides, tips, and stories about Japan for Indonesian travelers.</p>
         </div>
       </section>
 
@@ -90,7 +90,7 @@ export default function Blog() {
                       <span className="blog-category">{post.category}</span>
                       <h5 className="card-title mt-1">{post.title}</h5>
                       <p className="text-muted small mt-2" style={{ lineHeight: 1.6 }}>{post.excerpt}</p>
-                      <p className="blog-meta mt-3">{post.date} · {post.readTime} baca</p>
+                      <p className="blog-meta mt-3">{post.date} · {post.readTime} read</p>
                     </div>
                   </div>
                 </Link>

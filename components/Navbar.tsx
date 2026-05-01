@@ -87,13 +87,14 @@ export default function Navbar() {
             </li>
             <li className="nav-item dropdown">
               <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                Paket Trip
+                Trip Packages
               </a>
               <ul className="dropdown-menu">
                 <li><Link href="/packages/private-trip" className="dropdown-item">🗾 Private Trip</Link></li>
                 <li><Link href="/packages/one-day-tour" className="dropdown-item">🌅 One Day Tour</Link></li>
                 <li><Link href="/packages/company-trip" className="dropdown-item">🏢 Company Trip</Link></li>
                 <li><Link href="/packages/honeymoon" className="dropdown-item">💑 Honeymoon</Link></li>
+                <li><Link href="/packages/japan-local-life" className="dropdown-item">☕ Japan Local Life</Link></li>
               </ul>
             </li>
             <li className="nav-item">
@@ -126,7 +127,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="nav-link btn-nav-cta d-none d-lg-inline-flex align-items-center gap-2"
           >
-            💬 Konsultasi Gratis
+            💬 Free Consultation
           </a>
         </div>
       </div>

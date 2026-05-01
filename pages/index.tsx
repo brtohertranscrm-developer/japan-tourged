@@ -8,10 +8,10 @@ const IMAGEKIT_BASE = "https://ik.imagekit.io/tourged";
 const PROJECT_BASE = `${IMAGEKIT_BASE}/Project%20tourged.id`;
 
 const bannerSlides = [
-  { src: `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Pemandangan Indah" },
-  { src: `${PROJECT_BASE}/38dd9088-3af6-4d03-ba59-3d7799f84925.jpg?updatedAt=1777528837931&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Pengalaman Budaya" },
-  { src: `${PROJECT_BASE}/45e0af3c-8d21-4adb-b140-761b8bcea108.jpg?updatedAt=1777528837365&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Wisata Alam" },
-  { src: `${PROJECT_BASE}/IMG_2332.JPG?updatedAt=1777528836709&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Kuliner Jepang" },
+  { src: `${PROJECT_BASE}/IMG_2324.JPG?updatedAt=1777528837654&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Scenic Views" },
+  { src: `${PROJECT_BASE}/38dd9088-3af6-4d03-ba59-3d7799f84925.jpg?updatedAt=1777528837931&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Culture & City Life" },
+  { src: `${PROJECT_BASE}/45e0af3c-8d21-4adb-b140-761b8bcea108.jpg?updatedAt=1777528837365&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Nature Escapes" },
+  { src: `${PROJECT_BASE}/IMG_2332.JPG?updatedAt=1777528836709&tr=w-900,h-675,c-maintain_ratio`, alt: "Japan Travel - Japanese Food" },
 ];
 
 const galleryImages = [
@@ -28,77 +28,77 @@ const services = [
   {
     image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-private.jpg`,
     title: "Private Trip",
-    desc: "Perjalanan eksklusif yang dirancang khusus sesuai keinginan Anda. Bebas atur jadwal, destinasi, dan budget.",
+    desc: "A fully tailored Japan trip built around your pace, priorities, and budget. Flexible schedule, curated spots, and a clear route.",
     href: "/packages/private-trip",
   },
   {
     image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-oneday.jpg`,
-    title: "One Day Tour",
-    desc: "Jelajahi highlight terbaik Jepang dalam satu hari penuh bersama guide berpengalaman.",
+    title: "One-Day Trip",
+    desc: "Short on time? Get a well-timed, efficient itinerary that hits the best highlights without feeling rushed.",
     href: "/packages/one-day-tour",
-  },
-  {
-    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-company.jpg`,
-    title: "Company Trip",
-    desc: "Paket wisata tim perusahaan yang profesional dan memorable. Cocok untuk team building.",
-    href: "/packages/company-trip",
   },
   {
     image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-honeymoon.jpg`,
     title: "Honeymoon",
-    desc: "Rayakan momen spesial di Jepang dengan sentuhan romantis yang tak terlupakan.",
+    desc: "A romantic, cozy Japan itinerary with thoughtful details: scenic stays, slow mornings, and unforgettable date spots.",
     href: "/packages/honeymoon",
+  },
+  {
+    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-company.jpg`,
+    title: "Japan Local Life",
+    desc: "A slower, more local Japan experience: neighborhoods, cafés, markets, small towns, and everyday spots tailored to your vibe.",
+    href: "/packages/japan-local-life",
   },
 ];
 
 const steps = [
-  { num: "1", title: "Konsultasi Gratis", desc: "Ceritakan impian perjalanan Anda kepada tim kami via WhatsApp atau Google Meet." },
-  { num: "2", title: "Desain Itinerary", desc: "Kami rancang itinerary custom yang sesuai budget, waktu, dan preferensi Anda." },
-  { num: "3", title: "Konfirmasi & Booking", desc: "Review rencana perjalanan, lakukan pembayaran, dan semua siap diurus oleh kami." },
-  { num: "4", title: "Berangkat!", desc: "Nikmati perjalanan impian ke Jepang tanpa khawatir, kami siap membantu 24/7." },
+  { num: "1", title: "Free Consultation", desc: "Tell us your dream trip via WhatsApp or a quick Google Meet call." },
+  { num: "2", title: "Itinerary Design", desc: "We craft a custom itinerary that matches your time, style, and budget." },
+  { num: "3", title: "Review & Confirm", desc: "We finalize the plan together, then you confirm and we handle the details." },
+  { num: "4", title: "Enjoy Japan", desc: "Travel with peace of mind. We stay on standby to support you along the way." },
 ];
 
 const testimonials = [
   {
     name: "Rina Susanti",
     origin: "Jakarta",
-    text: "Pelayanannya luar biasa! Itinerary yang dibuat sangat detail dan sesuai dengan keinginan kami. Trip ke Kyoto dan Osaka jadi pengalaman terbaik dalam hidup.",
+    text: "The service was amazing. The itinerary felt detailed and really matched what we wanted. Kyoto and Osaka became a core memory for our family.",
   },
   {
     name: "Budi Hartono",
     origin: "Surabaya",
-    text: "Honeymoon kami di Jepang berjalan sempurna berkat tim yang sangat profesional dan responsif. Setiap detail diperhatikan dengan baik.",
+    text: "Our honeymoon in Japan felt smooth and well-planned. The team was responsive and paid attention to the small details.",
   },
   {
     name: "Dewi Rahayu",
     origin: "Bandung",
-    text: "Company trip kami ke Tokyo sukses besar! Tim sangat membantu dari awal hingga akhir. Pasti akan repeat order lagi tahun depan.",
+    text: "Our company trip to Tokyo went great. The team helped from start to finish. We’d love to plan the next one together.",
   },
 ];
 
 const blogPosts = [
   {
     emoji: "🌸",
-    category: "Musim Bunga",
-    title: "Panduan Lengkap Melihat Sakura di Jepang 2025",
-    date: "15 Maret 2025",
-    readTime: "8 menit",
+    category: "Spring",
+    title: "Sakura in Japan 2025: A Practical Guide",
+    date: "March 15, 2025",
+    readTime: "8 min",
     slug: "panduan-sakura-jepang-2025",
   },
   {
     emoji: "🍜",
-    category: "Kuliner",
-    title: "10 Makanan Wajib Dicoba Saat Pertama Kali ke Jepang",
-    date: "2 April 2025",
-    readTime: "6 menit",
+    category: "Food",
+    title: "10 Must-Try Foods for Your First Japan Trip",
+    date: "April 2, 2025",
+    readTime: "6 min",
     slug: "makanan-wajib-jepang",
   },
   {
     emoji: "🏯",
-    category: "Budaya",
-    title: "Menjelajahi Kuil-Kuil Bersejarah di Kyoto",
-    date: "20 April 2025",
-    readTime: "10 menit",
+    category: "Culture",
+    title: "Kyoto Temples: A First-Timer Friendly Route",
+    date: "April 20, 2025",
+    readTime: "10 min",
     slug: "kuil-bersejarah-kyoto",
   },
 ];
@@ -115,10 +115,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Japan Tourged — Wisata Jepang Personal & Custom</title>
+        <title>Tourged Travel — Curated Japan Trips</title>
         <meta
           name="description"
-          content="Spesialis wisata Jepang dengan itinerary custom, private trip, honeymoon, dan company trip. Konsultasi gratis, lebih dari 500+ traveler puas."
+          content="Curated Japan trips for Indonesian travelers. Custom itineraries for private trips, honeymoon, and company trips. Start with a free consultation."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -199,13 +199,13 @@ export default function Home() {
                 {/* Floating info cards */}
                 <div className="hero-floating-card" style={{ top: "1.5rem", left: "-1.2rem" }}>
                   <span className="hero-floating-dot" style={{ background: "#22c55e" }} />
-                  🌸 Sakura Season Ready
+                  🌸 Seasonal Trip Timing
                 </div>
                 <div className="hero-floating-card" style={{ bottom: "5.5rem", right: "-1.2rem" }}>
-                  ⭐ 5.0 · 500+ Review
+                  🧭 Clear Route, Clear Budget
                 </div>
                 <div className="hero-floating-card" style={{ bottom: "2rem", left: "-1.2rem" }}>
-                  ✈️ Custom Itinerary
+                  ✈️ Tailored Itinerary
                 </div>
               </div>
             </div>
@@ -217,10 +217,10 @@ export default function Home() {
       <section className="py-5 mt-2" id="layanan">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Layanan Kami</p>
-            <h2 className="section-title">Perjalanan untuk Setiap Momen</h2>
+            <p className="section-label">Services</p>
+            <h2 className="section-title">Trips for Every Moment</h2>
             <p className="text-muted mt-2" style={{ maxWidth: 520, margin: "0 auto" }}>
-              Dari trip solo hingga bulan madu, kami siap merancang pengalaman Jepang terbaik untuk Anda.
+              From solo trips to honeymoons, we design the best version of Japan for your preferences.
             </p>
           </div>
           <div className="row g-4">
@@ -232,7 +232,7 @@ export default function Home() {
                     <h5 className="card-title mb-2">{s.title}</h5>
                     <p className="card-text mb-3 text-muted">{s.desc}</p>
                     <Link href={s.href} className="btn-link-custom text-decoration-none fw-semibold">
-                      Selengkapnya →
+                      Learn more →
                     </Link>
                   </div>
                 </div>
@@ -246,8 +246,8 @@ export default function Home() {
       <section className="steps-section py-5">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Cara Kerja</p>
-            <h2 className="section-title">Mudah & Tanpa Ribet</h2>
+            <p className="section-label">How It Works</p>
+            <h2 className="section-title">Simple, Clear, and Fast</h2>
           </div>
           <div className="row g-4">
             {steps.map((step) => (
@@ -267,9 +267,9 @@ export default function Home() {
       <section className="py-5">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Testimoni</p>
-            <h2 className="section-title">Apa Kata Mereka</h2>
-            <p className="text-muted mt-2">Lebih dari 500+ traveler telah mempercayakan perjalanan impian mereka kepada kami.</p>
+            <p className="section-label">Testimonials</p>
+            <h2 className="section-title">What Travelers Say</h2>
+            <p className="text-muted mt-2">We’re building with our earliest clients. Your trip gets extra attention, end-to-end.</p>
           </div>
           <div className="row g-4">
             {testimonials.map((t) => (
@@ -295,9 +295,9 @@ export default function Home() {
       <section className="py-5">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Galeri Destinasi</p>
-            <h2 className="section-title">Momen Tak Terlupakan</h2>
-            <p className="text-muted mt-2">Intip beberapa momen keindahan destinasi di Jepang bersama kami.</p>
+            <p className="section-label">Destinations</p>
+            <h2 className="section-title">Moments to Remember</h2>
+            <p className="text-muted mt-2">A quick peek into the places and vibes we love in Japan.</p>
           </div>
           <div className="row g-3">
             {galleryImages.map((src, idx) => (
@@ -324,10 +324,10 @@ export default function Home() {
           <div className="d-flex justify-content-between align-items-end mb-5">
             <div>
               <p className="section-label">Blog & Tips</p>
-              <h2 className="section-title">Inspirasi Perjalanan Jepang</h2>
+              <h2 className="section-title">Japan Trip Inspiration</h2>
             </div>
             <Link href="/blog" className="btn btn-outline-danger rounded-pill px-4 d-none d-md-block">
-              Semua Artikel →
+              View all →
             </Link>
           </div>
           <div className="row g-4">
@@ -339,7 +339,7 @@ export default function Home() {
                     <div className="card-body p-4">
                       <span className="blog-category">{post.category}</span>
                       <h5 className="card-title">{post.title}</h5>
-                      <p className="blog-meta mt-2">{post.date} · {post.readTime} baca</p>
+                      <p className="blog-meta mt-2">{post.date} · {post.readTime} read</p>
                     </div>
                   </div>
                 </Link>
@@ -348,7 +348,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-4 d-md-none">
             <Link href="/blog" className="btn btn-outline-danger rounded-pill px-4">
-              Semua Artikel →
+              View all →
             </Link>
           </div>
         </div>
@@ -358,10 +358,10 @@ export default function Home() {
       <section className="cta-section py-5">
         <div className="container py-3 text-center">
           <h2 className="fw-800 mb-3" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800 }}>
-            Siap Wujudkan Trip Impian ke Jepang?
+            Ready to Plan Your Japan Trip?
           </h2>
           <p className="mb-4 opacity-90" style={{ fontSize: "1.05rem" }}>
-            Konsultasi gratis bersama tim kami, tidak ada komitmen apapun.
+            Start with a free consultation. No pressure, just a clear plan.
           </p>
           <div className="d-flex flex-wrap justify-content-center gap-3">
             <a
@@ -371,13 +371,13 @@ export default function Home() {
               className="btn btn-light fw-semibold px-4 py-3 rounded-pill"
               style={{ color: "#c0392b" }}
             >
-              💬 Chat WhatsApp Sekarang
+              💬 Chat on WhatsApp
             </a>
             <a
               href="mailto:hello@japantourged.com"
               className="btn btn-outline-light fw-semibold px-4 py-3 rounded-pill"
             >
-              📧 Kirim Email
+              📧 Email Us
             </a>
           </div>
         </div>

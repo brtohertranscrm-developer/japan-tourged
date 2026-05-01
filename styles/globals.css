@@ -9,8 +9,9 @@
   --text: #494b67;
   --muted: #707389;
   --border: #dfdcc9;
-  --bg-alt: #f7f4e8;
-  --surface: #f2f0de;
+  --bg-alt: #fbfaf6;
+  --surface: #ffffff;
+  --texture-opacity: 0.06;
 }
 
 * {
@@ -29,9 +30,31 @@ body {
   background: var(--surface);
 }
 
+/* Subtle Japanese-inspired texture overlay (seigaiha-like waves).
+   Kept very low opacity so it doesn't compete with content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--texture-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%233E3D8F' stroke-opacity='0.8' stroke-width='1'%3E%3Cpath d='M0 40c22 0 40-18 40-40M40 40c22 0 40-18 40-40M80 40c22 0 40-18 40-40M120 40c22 0 40-18 40-40'/%3E%3Cpath d='M0 120c22 0 40-18 40-40M40 120c22 0 40-18 40-40M80 120c22 0 40-18 40-40M120 120c22 0 40-18 40-40'/%3E%3Cpath d='M0 80c22 0 40-18 40-40M40 80c22 0 40-18 40-40M80 80c22 0 40-18 40-40M120 80c22 0 40-18 40-40'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  background-repeat: repeat;
+  transform: translateZ(0);
+}
+
+/* Ensure app content stays above the texture overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── Navbar ─────────────────────────────── */
 .navbar-main {
-  background: rgba(242, 240, 222, 0.95);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   padding: 0.9rem 0;
   transition: box-shadow 0.3s ease;

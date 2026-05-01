@@ -10,8 +10,8 @@ export default function Footer() {
               <img src="/tourged-logo.svg" alt="Tourged Travel" className="footer-brand-logo" />
             </div>
             <p className="small" style={{ lineHeight: 1.8 }}>
-              Spesialis wisata Jepang dengan layanan personal dan itinerary
-              custom sesuai impian Anda. Lebih dari 500+ traveler puas.
+              Curated Japan trips with personal service and custom itineraries
+              designed around your travel goals.
             </p>
             <div className="d-flex gap-2 mt-3">
               {[
@@ -33,14 +33,15 @@ export default function Footer() {
 
           <div className="col-6 col-lg-2">
             <h6 className="mb-3 text-uppercase" style={{ fontSize: "0.8rem", letterSpacing: "1px" }}>
-              Paket Trip
+              Trip Packages
             </h6>
             <ul className="list-unstyled small">
               {[
                 ["Private Trip", "/packages/private-trip"],
-                ["One Day Tour", "/packages/one-day-tour"],
+                ["One-Day Trip", "/packages/one-day-tour"],
                 ["Company Trip", "/packages/company-trip"],
                 ["Honeymoon", "/packages/honeymoon"],
+                ["Japan Local Life", "/packages/japan-local-life"],
               ].map(([label, href]) => (
                 <li key={label} className="mb-2">
                   <Link href={href}>{label}</Link>
@@ -51,14 +52,14 @@ export default function Footer() {
 
           <div className="col-6 col-lg-2">
             <h6 className="mb-3 text-uppercase" style={{ fontSize: "0.8rem", letterSpacing: "1px" }}>
-              Informasi
+              Information
             </h6>
             <ul className="list-unstyled small">
               {[
-                ["Tentang Kami", "/about"],
+                ["About Us", "/about"],
                 ["Blog", "/blog"],
                 ["FAQ", "/faq"],
-                ["Kontak", "/contact"],
+                ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <li key={label} className="mb-2">
                   <Link href={href}>{label}</Link>
@@ -69,7 +70,7 @@ export default function Footer() {
 
           <div className="col-lg-4">
             <h6 className="mb-3 text-uppercase" style={{ fontSize: "0.8rem", letterSpacing: "1px" }}>
-              Hubungi Kami
+              Contact Us
             </h6>
             <ul className="list-unstyled small">
               <li className="mb-2">📱 WhatsApp: +62 XXX-XXXX-XXXX</li>
@@ -83,7 +84,7 @@ export default function Footer() {
               className="btn btn-sm mt-2 fw-semibold px-3 py-2"
               style={{ background: "#25D366", color: "#fff", borderRadius: "50px", border: "none", fontSize: "0.85rem" }}
             >
-              💬 Chat WhatsApp
+              💬 Chat on WhatsApp
             </a>
           </div>
         </div>
@@ -92,11 +93,11 @@ export default function Footer() {
 
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center small">
           <p className="mb-0" style={{ color: "rgba(255,255,255,0.5)" }}>
-            © {new Date().getFullYear()} Japan Tourged. All rights reserved.
+            © {new Date().getFullYear()} Tourged Travel. All rights reserved.
           </p>
           <div className="d-flex gap-3 mt-2 mt-md-0">
-            <Link href="/privacy">Kebijakan Privasi</Link>
-            <Link href="/terms">Syarat & Ketentuan</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms & Conditions</Link>
           </div>
         </div>
       </div>

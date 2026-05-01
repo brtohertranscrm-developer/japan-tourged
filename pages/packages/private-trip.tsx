@@ -4,20 +4,20 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 const highlights = [
-  { icon: "✈️", title: "Tiket Pesawat", desc: "Bantu pencarian tiket terbaik sesuai budget" },
-  { icon: "🏨", title: "Akomodasi", desc: "Hotel dan ryokan pilihan di lokasi strategis" },
-  { icon: "🗺️", title: "Itinerary Custom", desc: "Rencana perjalanan detail sesuai preferensi" },
-  { icon: "🚌", title: "Transportasi", desc: "Panduan JR Pass, IC Card, dan transportasi lokal" },
-  { icon: "👨‍✈️", title: "Pemandu Lokal", desc: "Guide berpengalaman untuk spot tersembunyi" },
-  { icon: "📞", title: "Support 24/7", desc: "Tim siap membantu selama perjalanan berlangsung" },
+  { icon: "✈️", title: "Flights", desc: "Help finding the best tickets for your budget" },
+  { icon: "🏨", title: "Accommodation", desc: "Handpicked hotels and ryokan in strategic areas" },
+  { icon: "🗺️", title: "Custom Itinerary", desc: "A detailed day-by-day plan based on your preferences" },
+  { icon: "🚌", title: "Transport", desc: "Guidance for JR Pass, IC cards, and local transport" },
+  { icon: "👨‍✈️", title: "Local Insights", desc: "Practical recommendations for hidden gems and must-sees" },
+  { icon: "📞", title: "Support", desc: "Responsive help during planning and throughout your trip" },
 ];
 
 export default function PrivateTrip() {
   return (
     <>
       <Head>
-        <title>Private Trip Jepang — Japan Tourged</title>
-        <meta name="description" content="Paket private trip Jepang fully custom sesuai impian Anda. Itinerary personal, guide lokal, dan support penuh." />
+        <title>Private Trip Japan — Tourged Travel</title>
+        <meta name="description" content="A fully custom private trip to Japan. Personal itinerary, curated stays, and responsive support for Indonesian travelers." />
       </Head>
 
       <Navbar />
@@ -25,10 +25,10 @@ export default function PrivateTrip() {
       <section className="page-hero text-center">
         <div className="container">
           <div style={{ fontSize: "3.5rem", marginBottom: "1rem" }}>🗾</div>
-          <span className="page-hero-label">Paket Unggulan</span>
-          <h1 className="display-5 fw-bold mt-2">Private Trip Jepang</h1>
+          <span className="page-hero-label">Signature Package</span>
+          <h1 className="display-5 fw-bold mt-2">Private Trip to Japan</h1>
           <p className="mt-3" style={{ maxWidth: 520, margin: "0 auto", color: "#6b7280" }}>
-            Perjalanan eksklusif yang dirancang 100% sesuai keinginan Anda. Jadwal bebas, destinasi pilihan sendiri.
+            A 100% tailored trip built around your pace and priorities. Flexible schedule, curated destinations, clear budget.
           </p>
           <div className="mt-4 d-flex flex-wrap justify-content-center gap-3">
             <a
@@ -37,10 +37,10 @@ export default function PrivateTrip() {
               rel="noopener noreferrer"
               className="btn-primary-custom"
             >
-              💬 Konsultasi Gratis
+              💬 Free Consultation
             </a>
             <Link href="/blog" className="btn-outline-custom">
-              Baca Tips Trip →
+              Read Tips →
             </Link>
           </div>
         </div>
@@ -49,8 +49,8 @@ export default function PrivateTrip() {
       <section className="py-5">
         <div className="container py-3">
           <div className="text-center mb-5">
-            <p className="section-label">Yang Kami Siapkan</p>
-            <h2 className="section-title">Semua Sudah Kami Urus</h2>
+            <p className="section-label">What You Get</p>
+            <h2 className="section-title">We Handle the Details</h2>
           </div>
           <div className="row g-4">
             {highlights.map((h) => (
@@ -70,14 +70,14 @@ export default function PrivateTrip() {
         <div className="container py-3">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
-              <p className="section-label">Harga</p>
-              <h2 className="section-title mb-3">Estimasi Biaya</h2>
-              <p className="text-muted mb-4">Harga bervariasi tergantung durasi, jumlah peserta, dan preferensi akomodasi. Hubungi kami untuk penawaran terbaik.</p>
+              <p className="section-label">Pricing</p>
+              <h2 className="section-title mb-3">Budget Estimate</h2>
+              <p className="text-muted mb-4">Pricing depends on trip length, group size, season, and accommodation preferences. Chat us for the best option for your plan.</p>
               <div className="row g-3">
                 {[
-                  { duration: "5 Hari 4 Malam", price: "Mulai Rp 15 juta", note: "per orang (2 pax)" },
-                  { duration: "7 Hari 6 Malam", price: "Mulai Rp 20 juta", note: "per orang (2 pax)" },
-                  { duration: "10 Hari 9 Malam", price: "Mulai Rp 28 juta", note: "per orang (2 pax)" },
+                  { duration: "5D4N", price: "From IDR 15M", note: "per person (2 pax)" },
+                  { duration: "7D6N", price: "From IDR 20M", note: "per person (2 pax)" },
+                  { duration: "10D9N", price: "From IDR 28M", note: "per person (2 pax)" },
                 ].map((p) => (
                   <div key={p.duration} className="col-md-4">
                     <div className="p-4 rounded-4 bg-white" style={{ border: "1.5px solid #e5e7eb" }}>
@@ -88,7 +88,7 @@ export default function PrivateTrip() {
                   </div>
                 ))}
               </div>
-              <p className="text-muted small mt-3">* Harga belum termasuk tiket pesawat. Hubungi kami untuk paket custom sesuai budget.</p>
+              <p className="text-muted small mt-3">* Flights are not included. We can tailor the plan based on your budget.</p>
             </div>
           </div>
         </div>
@@ -96,8 +96,8 @@ export default function PrivateTrip() {
 
       <section className="cta-section py-5">
         <div className="container py-3 text-center">
-          <h2 className="fw-bold mb-3" style={{ color: "#fff", fontSize: "2rem" }}>Mulai Rencanakan Trip Anda</h2>
-          <p className="mb-4" style={{ color: "rgba(255,255,255,0.85)" }}>Konsultasi gratis, tidak ada komitmen apapun.</p>
+          <h2 className="fw-bold mb-3" style={{ color: "#fff", fontSize: "2rem" }}>Start Planning Your Trip</h2>
+          <p className="mb-4" style={{ color: "rgba(255,255,255,0.85)" }}>Free consultation. No pressure, just a clear plan.</p>
           <a
             href="https://wa.me/62XXXXXXXXXX"
             target="_blank"
@@ -105,7 +105,7 @@ export default function PrivateTrip() {
             className="btn btn-light fw-semibold px-5 py-3 rounded-pill"
             style={{ color: "#c0392b" }}
           >
-            💬 Chat WhatsApp Sekarang
+            💬 Chat on WhatsApp
           </a>
         </div>
       </section>
