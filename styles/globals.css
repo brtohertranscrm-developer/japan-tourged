@@ -174,8 +174,9 @@ body > * {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1000px 600px at 20% 30%, rgba(45, 47, 73, 0.35), transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,0.32), rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.55));
+    radial-gradient(900px 520px at 20% 35%, rgba(0, 0, 0, 0.64), transparent 62%),
+    radial-gradient(980px 560px at 55% 45%, rgba(45, 47, 73, 0.26), transparent 68%),
+    linear-gradient(180deg, rgba(0,0,0,0.46), rgba(0,0,0,0.22) 45%, rgba(0,0,0,0.62));
 }
 
 .hero-overlay {
@@ -197,8 +198,8 @@ body > * {
   max-width: 640px;
   padding: 26px 22px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(10px);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
 }
@@ -207,9 +208,9 @@ body > * {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--primary-light);
-  color: var(--primary);
-  border: 1px solid rgba(226, 76, 120, 0.25);
+  background: rgba(0, 0, 0, 0.34);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.82rem;
