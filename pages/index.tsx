@@ -26,25 +26,25 @@ const galleryImages = [
 
 const services = [
   {
-    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-private.jpg`,
+    image: "/services/private-trip.jpg",
     title: "Private Trip",
     desc: "A fully tailored Japan trip built around your pace, priorities, and budget. Flexible schedule, curated spots, and a clear route.",
     href: "/packages/private-trip",
   },
   {
-    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-oneday.jpg`,
+    image: "/services/one-day-trip.jpg",
     title: "One-Day Trip",
     desc: "Short on time? Get a well-timed, efficient itinerary that hits the best highlights without feeling rushed.",
     href: "/packages/one-day-tour",
   },
   {
-    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-honeymoon.jpg`,
+    image: "/services/honeymoon.jpg",
     title: "Honeymoon",
     desc: "A romantic, cozy Japan itinerary with thoughtful details: scenic stays, slow mornings, and unforgettable date spots.",
     href: "/packages/honeymoon",
   },
   {
-    image: `${IMAGEKIT_BASE}/tr:w-600,h-320/card-company.jpg`,
+    image: "/services/japan-local-life.jpg",
     title: "Japan Local Life",
     desc: "A slower, more local Japan experience: neighborhoods, cafés, markets, small towns, and everyday spots tailored to your vibe.",
     href: "/packages/japan-local-life",
