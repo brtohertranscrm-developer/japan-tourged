@@ -178,28 +178,31 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6 d-none d-lg-block">
-              <div className="hero-video-card position-relative overflow-hidden p-0" style={{ borderRadius: '24px', height: '480px' }}>
-                <div id="heroBannerCarousel" className="carousel slide h-100" data-bs-ride="carousel">
-                  <div className="carousel-inner h-100">
-                    {bannerSlides.map((slide, idx) => (
-                      <div key={idx} className={`carousel-item h-100 ${idx === 0 ? "active" : ""}`}>
-                        <img 
-                          src={slide.src} 
-                          alt={slide.alt} 
-                          className="d-block w-100 h-100" 
-                          style={{ objectFit: "cover" }} 
-                        />
-                      </div>
-                    ))}
+              <div className="hero-video-card position-relative p-0" style={{ height: "480px", overflow: "visible" }}>
+                {/* Keep overflow visible for floating cards, but clip the media to rounded corners */}
+                <div style={{ borderRadius: "24px", height: "100%", overflow: "hidden" }}>
+                  <div id="heroBannerCarousel" className="carousel slide h-100" data-bs-ride="carousel">
+                    <div className="carousel-inner h-100">
+                      {bannerSlides.map((slide, idx) => (
+                        <div key={idx} className={`carousel-item h-100 ${idx === 0 ? "active" : ""}`}>
+                          <img
+                            src={slide.src}
+                            alt={slide.alt}
+                            className="d-block w-100 h-100"
+                            style={{ objectFit: "cover" }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
                 </div>
                 {/* Floating info cards */}
                 <div className="hero-floating-card" style={{ top: "1.5rem", left: "-1.2rem" }}>
