@@ -7,10 +7,7 @@ export default function Footer() {
         <div className="row g-4 mb-4">
           <div className="col-lg-4">
             <div className="footer-brand mb-3">
-              <span className="fw-bold fs-4">
-                <span style={{ color: "#f39c12" }}>Japan</span>
-                <span className="text-white"> Tourged</span>
-              </span>
+              <img src="/tourged-logo.svg" alt="Tourged Travel" className="footer-brand-logo" />
             </div>
             <p className="small" style={{ lineHeight: 1.8 }}>
               Spesialis wisata Jepang dengan layanan personal dan itinerary

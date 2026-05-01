@@ -1,15 +1,16 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 :root {
-  --primary: #e8403a;
-  --primary-dark: #c0312c;
-  --primary-light: #fff0f0;
-  --accent: #f59e0b;
-  --dark: #111827;
-  --text: #374151;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --bg-alt: #f9fafb;
+  --primary: #e24c78;
+  --primary-dark: #c83e68;
+  --primary-light: #fbe5ed;
+  --accent: #3e3d8f;
+  --dark: #2d2f49;
+  --text: #494b67;
+  --muted: #707389;
+  --border: #dfdcc9;
+  --bg-alt: #f7f4e8;
+  --surface: #f2f0de;
 }
 
 * {
@@ -25,12 +26,12 @@ html {
 body {
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   color: var(--text);
-  background: #fff;
+  background: var(--surface);
 }
 
 /* ── Navbar ─────────────────────────────── */
 .navbar-main {
-  background: #fff;
+  background: rgba(242, 240, 222, 0.95);
   border-bottom: 1px solid var(--border);
   padding: 0.9rem 0;
   transition: box-shadow 0.3s ease;
@@ -86,7 +87,7 @@ body {
 .btn-nav-cta:hover {
   background: var(--primary-dark) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(232, 64, 58, 0.35) !important;
+  box-shadow: 0 4px 12px rgba(226, 76, 120, 0.35) !important;
 }
 
 /* ── Navbar Social Icons ─────────────────── */
@@ -117,7 +118,7 @@ body {
 
 /* ── Hero ────────────────────────────────── */
 .hero-section {
-  background: #fff;
+  background: var(--surface);
   min-height: 92vh;
   display: flex;
   align-items: center;
@@ -131,7 +132,7 @@ body {
   gap: 6px;
   background: var(--primary-light);
   color: var(--primary);
-  border: 1px solid rgba(232, 64, 58, 0.2);
+  border: 1px solid rgba(226, 76, 120, 0.25);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.82rem;
@@ -308,7 +309,7 @@ body {
   background: var(--primary-dark);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232, 64, 58, 0.35);
+  box-shadow: 0 8px 24px rgba(226, 76, 120, 0.35);
 }
 
 .btn-outline-custom {
@@ -377,7 +378,7 @@ body {
 
 /* ── Service Cards ───────────────────────── */
 .service-card {
-  background: #fff;
+  background: #fffef9;
   border: 1.5px solid var(--border);
   border-radius: 20px;
   padding: 1.8rem;
@@ -388,7 +389,7 @@ body {
 
 .service-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 12px 32px rgba(232, 64, 58, 0.1);
+  box-shadow: 0 12px 32px rgba(226, 76, 120, 0.14);
   transform: translateY(-4px);
 }
 
@@ -474,7 +475,7 @@ body {
 
 /* ── Testimonials ────────────────────────── */
 .testimonial-card {
-  background: #fff;
+  background: #fffef9;
   border: 1.5px solid var(--border);
   border-radius: 20px;
   padding: 1.6rem;
@@ -511,7 +512,7 @@ body {
   height: 40px;
   border-radius: 50%;
   background: var(--primary-light);
-  border: 2px solid rgba(232, 64, 58, 0.2);
+  border: 2px solid rgba(226, 76, 120, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -535,7 +536,7 @@ body {
 
 /* ── Blog Cards ──────────────────────────── */
 .blog-card {
-  background: #fff;
+  background: #fffef9;
   border: 1.5px solid var(--border) !important;
   border-radius: 20px !important;
   overflow: hidden;
@@ -545,14 +546,14 @@ body {
 
 .blog-card:hover {
   border-color: var(--primary) !important;
-  box-shadow: 0 12px 32px rgba(232, 64, 58, 0.1);
+  box-shadow: 0 12px 32px rgba(226, 76, 120, 0.14);
   transform: translateY(-4px);
 }
 
 .blog-card-img {
   width: 100%;
   height: 190px;
-  background: linear-gradient(135deg, #fff5f5, #fde8e8);
+  background: linear-gradient(135deg, #fbe5ed, #f2f0de);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -592,8 +593,8 @@ body {
 
 /* ── Footer ──────────────────────────────── */
 .footer {
-  background: var(--dark);
-  color: rgba(255, 255, 255, 0.65);
+  background: #2d2f49;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .footer h5,
@@ -630,6 +631,19 @@ body {
 
 .footer-divider {
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-brand-logo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 /* ── Page hero (inner pages) ─────────────── */

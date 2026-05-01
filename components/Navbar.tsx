@@ -62,9 +62,8 @@ export default function Navbar() {
     <nav className={`navbar navbar-expand-lg fixed-top navbar-main ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         {/* Logo */}
-        <Link href="/" className="navbar-brand fw-bold fs-5 text-decoration-none d-flex align-items-center gap-1">
-          <span style={{ color: "#e8403a" }}>🇯🇵 Japan</span>
-          <span style={{ color: "#111827" }}>Tourged</span>
+        <Link href="/" className="navbar-brand text-decoration-none d-flex align-items-center">
+          <img src="/tourged-logo.svg" alt="Tourged Travel" className="brand-logo" />
         </Link>
 
         <button

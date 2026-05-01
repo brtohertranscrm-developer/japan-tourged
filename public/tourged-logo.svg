@@ -1,0 +1,9 @@
+<svg width="320" height="90" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="90" rx="12" fill="#F2F0DE"/>
+  <g transform="translate(12,10)">
+    <text x="0" y="52" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="62" fill="#E24C78">tourged</text>
+    <text x="196" y="72" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="26" fill="#3E3D8F" letter-spacing="1.6">travel</text>
+    <circle cx="47" cy="41" r="18" fill="#E24C78"/>
+    <path d="M34 40L45 51L60 32" stroke="#F2F0DE" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
